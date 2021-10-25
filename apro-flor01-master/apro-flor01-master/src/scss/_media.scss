@@ -1,0 +1,534 @@
+.media-pool {
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include xl {
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+    @include xxl {
+        margin-right: -18px;
+        margin-left: -18px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+.media-item {
+    position: relative;
+    margin-bottom: 50px;
+    .content {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        &.video {
+            &:before {
+                width: 60px;
+                height: 60px;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transition: all .3s ease;
+                @include icon(11);
+                @include md {
+                    width: 72px;
+                    height: 72px;
+                }
+                @include xxl {
+                    width: 96px;
+                    height: 96px;
+                }
+                @include xxxl {
+                    width: 110px;
+                    height: 110px;
+                }
+            }
+        }
+    }
+    .text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: $color-yellow;
+        color: $color-dark;
+        transition: all .4s ease;
+        padding: 20px 25px;
+        @include md_xl {
+            padding: 15px 40px;
+        }
+        @include xl {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            //justify-content: space-between;
+            padding: 25px;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        @include xxl {
+            padding: 30px;
+        }
+        @include xxxl {
+            padding: 50px 40px;
+        }
+    }
+    .date {
+        font-size: .8125em;
+        font-weight: bold;
+        color: #686868;
+        @include md {
+            font-size: .875em;
+        }
+        @include xxl {
+            font-size: .9375em;
+        }
+    }
+    .fz-C {
+        margin-bottom: 0;
+        @include xs_md {
+            font-size: 1.125em;
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .desc {
+        line-height: 1.5em;
+        @include xs_xl {
+            display: none;
+        }
+        @include md_xxl {
+            font-size: .875em;
+        }
+        @include xxl_xxxl {
+            font-size: .9375em;
+        }
+    }
+    .link {
+        @include xs_md {
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            font-size: 0;
+        }
+        @include xl {
+            position: absolute;
+            bottom: 25px;
+        }
+        @include xxl {
+            bottom: 30px;
+        }
+        @include xxxl {
+            bottom: 40px;
+        }
+    }
+    @include sm_lg {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include sm_xl {
+        width: 50%;
+        float: left;
+        padding: 15px;
+    }
+    @include xl {
+        width: 25%;
+        float: left;
+        padding: 12px;
+        //border: 1px solid #000;
+        margin-bottom: 0;
+        &:nth-of-type(10n+1),
+        &:nth-of-type(10n+10) {
+            width: 50%;
+            .text {
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                >div {
+                    padding: 25px;
+                    background-color: $color-yellow;
+                    height: auto;
+                    width: 100%;
+                    padding-right: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                }
+                .link {
+                    position: absolute;
+                    right: 25px;
+                    display: inline-block;
+                    width: auto;
+                    bottom: 25px;
+                }
+            }
+        }
+        &:nth-of-type(10n+6),
+        &:nth-of-type(10n+8) {
+            clear: both;
+        }
+        &:nth-of-type(10n+10) {
+            margin-top: -25%;
+        }
+        &:hover {
+            .text {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    @include xxl {
+        padding: 18px;
+        &:nth-of-type(10n+1),
+        &:nth-of-type(10n+10) {
+            .text {
+                >div {
+                    padding: 40px 30px;
+                    //height: 30%;
+                    padding-right: 40%;
+                }
+                .link {
+                    right: 40px;
+                    bottom: 30px;
+                }
+            }
+        }
+    }
+    @include xxxl {
+        &:nth-of-type(10n+1),
+        &:nth-of-type(10n+10) {
+            .text {
+                >div {
+                    padding: 50px 40px;
+                    padding-right: 45%;
+                }
+                .link {
+                    right: 50px;
+                    bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+.media-popup {
+    background-color: rgba(#000, 0.8);
+    backdrop-filter: blur(7px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 299;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .35s ease;
+    transition-delay: 0s;
+    .container {
+        //border: 1px solid salmon;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .55s ease;
+        transform: translateY(50px);
+        @include xs_xl {
+            width: 100%;
+            height: 100vh;
+        }
+        @include md_xl {
+            padding: 72px;
+        }
+        @include md_xl_h {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @include xl {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    .close-popup {
+        width: 30px;
+        height: 30px;
+        //border: 1px solid #fff;
+        display: block;
+        cursor: pointer;
+        font-size: 0;
+        line-height: 0;
+        transition: all .35s ease;
+        &:after {
+            width: 100%;
+            height: 100%;
+            @include icon(10)
+        }
+        &:active,
+        &:hover {
+            transform: scale(1.125);
+        }
+        @include xs_md {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translate(-50%);
+        }
+        @include md {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        @include xxl {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .title-area {
+        color: #fff;
+        text-align: left;
+        //border: 1px solid sandybrown;
+        @include xs_md {
+            padding-top: 100px;
+        }
+        @include md {
+            position: relative;
+            padding: 0 70px 20px 0;
+        }
+        .date {
+            opacity: 0.5;
+        }
+        .fz-B {
+            color: #fff;
+        }
+    }
+}
+
+.popup-content {
+    background-color: #fff;
+    .article {
+        color: #696969;
+        strong {
+            color: #3a3a3a;
+            @include xl {
+                font-size: 1.125rem;
+            }
+        }
+        p {
+            display: block;
+            padding-bottom: 1em;
+        }
+    }
+    @include xs_xl {
+        height: calc(100vh - 240px);
+        overflow-y: auto;
+    }
+    @include md_xl {
+        height: calc(100vh - 280px);
+    }
+    @include md_xl_h {
+        display: flex;
+        flex-direction: row-reverse;
+        height: auto;
+        overflow: hidden;
+        align-items: stretch;
+        &.type-video {
+            flex-direction: row;
+        }
+        .gallery,
+        .article {
+            flex: 1;
+            width: 50%;
+        }
+        .video {
+            flex: 3;
+            width: 60%;
+            &+.article {
+                flex: 2;
+                width: 40%;
+            }
+        }
+        .article-inner-wrap {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+        .article-desktop-scroll {
+            padding: $gutter / 2;
+        }
+    }
+    @include xl {
+        display: flex;
+        flex-direction: row-reverse;
+        height: auto;
+        overflow: hidden;
+        align-items: stretch;
+        &.type-video {
+            flex-direction: row;
+        }
+        .gallery,
+        .article {
+            flex: 1;
+            width: 50%;
+        }
+        .video {
+            flex: 3;
+            width: 60%;
+            &+.article {
+                flex: 2;
+                width: 40%;
+            }
+        }
+        .article-inner-wrap {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+        .article-desktop-scroll {
+            padding: $gutter / 2;
+        }
+    }
+    @include xl {
+        .article-desktop-scroll {
+            padding: $gutter / 2 40px;
+        }
+    }
+    @include xxl {
+        .article-desktop-scroll {
+            padding: 30px 50px;
+        }
+    }
+    @include xxxl {
+        .article-desktop-scroll {
+            padding: 70px;
+        }
+    }
+    .social {
+        margin-bottom: 10px;
+        @include xs_lg {
+            a {
+                margin-right: 20px;
+            }
+        }
+        @include xs_lg {
+            a {
+                &:first-of-type {
+                    margin-left: 0;
+                }
+            }
+        }
+        @include lg {
+            position: static !important;
+        }
+    }
+    &.text-only {
+        .close-popup {
+            margin: 0 auto;
+            @include xs_md {
+                position: static;
+                transform: none;
+                margin: 0 auto;
+            }
+            @include md {
+                position: static;
+                transform: none;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.text-only {
+    //max-width: 1050px;
+    color: #3a3a3a;
+    .title-area {
+        padding: 30px 0 20px;
+        max-width: 1050px;
+        margin: 0 auto;
+        @include md {
+            padding: 0 0 40px;
+        }
+    }
+    .popup-content {
+        height: calc(100vh - 160px);
+        max-width: 1050px;
+        width: 100%;
+        margin: 0 auto;
+        @include md {
+            height: calc(100vh - 240px);
+        }
+        .article {
+            strong {
+                @include xl {
+                    font-size: 1.125rem;
+                }
+                @include xxxl {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+    .fz-B {
+        text-align: center;
+        border-bottom: 2px solid #3a3a3a;
+        padding-bottom: 1em;
+        color: #3a3a3a !important;
+        padding-right: 0 !important;
+        @include lg {
+            border-bottom: 3px solid #3a3a3a;
+        }
+    }
+    .close-popup {
+        margin: 0 auto;
+        @include xs_md {
+            position: static;
+            transform: none;
+            margin: 0 auto;
+        }
+        @include md {
+            position: static;
+            transform: none;
+            margin: 0 auto;
+        }
+    }
+    .article-desktop-scroll {
+        @include md {
+            padding: 30px 60px;
+        }
+        @include xl {
+            padding: 40px 70px;
+        }
+        @include xxxl {
+            padding: 40px 90px;
+        }
+    }
+}
+
+.show-popup {
+    overflow: hidden;
+    .media-popup {
+        pointer-events: auto;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0.1s;
+        .container {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+    }
+}

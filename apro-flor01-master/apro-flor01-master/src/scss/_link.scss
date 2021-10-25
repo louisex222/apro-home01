@@ -1,0 +1,158 @@
+.link,
+.more {
+    font-weight: bold;
+    font-size: .9375em;
+    //margin-top: 1em;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all .25s ease;
+    color: $color-dark;
+    @include md {
+        font-size: 1em;
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        margin: -2px 0 0 10px;
+        @include xxl {
+            margin: -3px 0 0 15px;
+        }
+        @include icon(1); // width: 100px;
+    }
+    &:hover,
+    &:active {
+        color: $color-dark;
+    }
+    &.white {
+        color: #fff;
+        &:after {
+            @include icon(3); // width: 100px;
+        }
+    }
+    &.gray {
+        color: $color-dark;
+        &:after {
+            @include icon(4); // width: 100px;
+        }
+        &:hover {
+            &:after {
+                @include icon(1); // width: 100px;
+            }
+        }
+    }
+    &.dark {
+        color: $color-dark;
+        &:after {
+            @include icon(2); // width: 100px;
+        }
+    }
+    &.down {
+        color: $color-main;
+        &:after {
+            @include icon(25); // width: 100px;
+        }
+    }
+    &.watch {
+        &:after {
+            width: 30px;
+            height: 30px;
+            @include icon(21); // width: 100px;
+        }
+    }
+    &.download {
+        &:after {
+            @include icon(22);
+            &:hover {
+                @include icon(23);
+            }
+        }
+    }
+}
+
+.back {
+    display: inline-block;
+    width: auto;
+    border-radius: 25px;
+    text-align: center;
+    margin: 0 auto;
+    color: #5e5e5e;
+    font-size: .875rem;
+    font-weight: normal;
+    line-height: 45px;
+    padding: 0 30px;
+    border: 1px solid $color-yellow;
+    border-radius: 25px;
+    transition: all .35s ease;
+    &:after {
+        display: none;
+    }
+    &:hover,
+    &:active {
+        background-color: $color-yellow;
+        color: #fff;
+    }
+    @include xxl {
+        font-size: .9375rem;
+    }
+    @include xxxl {
+        font-size: 1rem;
+    }
+}
+
+.btn-af {
+    white-space: nowrap;
+    display: inline-block;
+    width: auto;
+    border-radius: 25px;
+    text-align: center;
+    margin: 0 auto;
+    color: #5e5e5e;
+    font-size: .875rem;
+    font-weight: normal;
+    line-height: 45px;
+    padding: 0;
+    border: 1px solid $color-yellow;
+    border-radius: 25px;
+    transition: all .3s ease;
+    &:after {
+        display: none;
+    }
+    @include xl {
+        border: 1px solid $color-border;
+        line-height: 40px;
+        &:hover {
+            border-color: $color-yellow;
+            color: #5e5e5e !important;
+        }
+    }
+    @include xxl {
+        font-size: .9375rem;
+    }
+    @include xxxl {
+        font-size: 1rem;
+    }
+}
+
+.btn-popup {
+    color: $color-main;
+}
+
+#file_name {
+    display: none;
+    &+label {
+        display: block;
+        cursor: pointer;
+        &:before {
+            content: "瀏覽";
+            display: inline-block;
+            width: 100px;
+            background-color: #eee;
+            line-height: 42px;
+            text-align: center;
+            margin-right: 20px;
+        }
+    }
+}

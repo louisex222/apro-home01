@@ -1,0 +1,182 @@
+// 次選單
+.nav-pd-sub {
+    @include xs_lg {
+        display: none !important;
+    }
+    @include lg {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.pd-cat-list-wrap {
+    @include lg {
+        padding-top: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 5vw;
+        position: relative;
+        transition: all .5s ease;
+        transform: translateY(50px);
+        &:before {
+            content: "";
+            display: block;
+            left: 5px;
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            border-left: 1px solid $color-border;
+            z-index: 2;
+        }
+    }
+    @include xxl {
+        padding-top: 80px;
+        //padding-right: 10vw;
+    }
+    @include xxxl {
+        padding-top: 100px;
+    }
+}
+
+.pd-cat-list {
+    @include lg {
+        height: 72%;
+        //border: 1px solid salmon;
+        overflow-y: auto;
+        li {
+            margin-bottom: 15px;
+            padding-left: 10vw;
+        }
+        a {
+            display: block;
+            position: relative;
+            border-bottom: 1px solid $color-border;
+            padding: 10px 0 10px 0;
+            &:before {
+                content: "";
+                display: block;
+                width: 5px;
+                height: 100%;
+                background-color: $color-main;
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform: translateX(-10vw) scaleY(0);
+                transition: all .3s ease;
+                z-index: 5;
+            }
+            &:hover {
+                span {
+                    color: #000;
+                }
+                &:before {
+                    transform: translateX(-10vw) scaleY(1);
+                }
+            }
+        }
+        span {
+            font-size: 1em;
+            color: #929292;
+            position: absolute;
+            left: 0;
+            top: 16px;
+            transition: color .35s ease;
+            transform: translateX(-150%);
+            display: block;
+            width: 2em;
+            text-align: center;
+        }
+        strong {
+            font-size: 1.375em;
+            font-weight: bold;
+        }
+        p {
+            font-size: .9375em;
+        }
+    }
+    @include xxxl {
+        li {
+            margin-bottom: 20px;
+        }
+        span {
+            font-size: 1.125em;
+            transform: translateX(-200%);
+        }
+        strong {
+            font-size: 1.625em;
+        }
+        p {
+            font-size: 1em;
+        }
+    }
+}
+
+.pd-cat-back {
+    @include xs_lg {
+        display: none;
+    }
+    @include lg {
+        width: 15%;
+        position: absolute;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        //border-right: 1px solid #e0e0e0;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 50px;
+        transition: all .5s ease;
+        transform: translateY(-50px);
+        a {
+            display: block;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            color: #000;
+            transition: color .35s ease;
+            font-weight: bold;
+            &:before {
+                content: "";
+                display: block;
+                width: calc(50% - 4em);
+                height: 1px;
+                border-top: 1px solid $color-border;
+                position: absolute;
+                top: 50%;
+                left: 1.5em;
+                transition: all .35s ease;
+            }
+            &:hover {
+                color: #000;
+                &:before {
+                    border-top: 1px solid #000;
+                }
+            }
+        }
+    }
+    @include xl {
+        a {
+            line-height: 2.75em;
+            font-size: 1.125rem;
+        }
+    }
+    @include xxl {
+        padding-top: 80px;
+    }
+    @include xxxl {
+        padding-top: 100px;
+        a {
+            &:before {
+                width: calc(50% - 5em);
+                left: 2em;
+            }
+        }
+    }
+}

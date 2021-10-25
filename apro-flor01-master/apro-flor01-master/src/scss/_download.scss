@@ -1,0 +1,171 @@
+.dm-item-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    @include xl {
+        padding-top: 60px;
+    }
+    @include xxl {
+        padding-top: 80px;
+    }
+    @include xxxl {
+        padding-top: 120px;
+    }
+}
+
+.dm-item {
+    display: block;
+    position: relative;
+    @include xs_md {
+        border-bottom: 1px solid #f3f3f3;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    @include sm {
+        width: 45%;
+        margin-left: 10%;
+        margin-bottom: 60px;
+        &:nth-of-type(2n+1) {
+            margin-left: 0;
+        }
+    }
+    @include xl {
+        display: flex;
+        align-items: flex-start;
+        &:hover {
+            .image {
+                &:after {
+                    transform: scaleX(1);
+                }
+            }
+            .deco-num {
+                span {
+                    color: $color-main;
+                }
+            }
+            .link {
+                &:after {
+                    @include icon(23);
+                }
+            }
+        }
+    }
+    @include xxxl {
+        display: flex;
+        margin-bottom: 100px;
+    }
+    .text {
+        @include xl {
+            padding-top: 140px;
+            flex: 1;
+            margin-left: 40px;
+        }
+        @include xxl {
+            padding-top: 160px;
+            margin-left: 50px;
+        }
+        @include xxxl {
+            padding-top: 30%;
+            margin-left: 60px;
+        }
+        @include fullhd {
+            padding-top: 35%;
+        }
+    }
+    .fz-C {
+        &:after {
+            display: none;
+        }
+        margin-bottom: 0.15em;
+    }
+    .image {
+        position: relative;
+        padding-right: 70px;
+        margin-bottom: 20px;
+        line-height: 0;
+        img {
+            display: block;
+            line-height: 1em;
+        }
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: $color-yellow;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transition: all .35s ease;
+            z-index: 3;
+            transform-origin: left;
+            @include xxxl {
+                height: 8px;
+            }
+        }
+        @include xl {
+            //position: static;
+            flex: 1;
+            padding-right: 0;
+        }
+    }
+    .desc {
+        color: #8a8a8a;
+        padding-bottom: 1em;
+        line-height: 1.5em;
+        @include xs_md {
+            font-size: .875rem;
+        }
+    }
+    .deco-num {
+        font-size: 3.125rem;
+        position: absolute;
+        width: 70px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        &::before {
+            content: "";
+            width: 50%;
+            //background-color: sandybrown;
+            flex: auto;
+            margin-bottom: 20px;
+            border-right: 1px solid #dcdcdc;
+        }
+        span {
+            transform: rotate(90deg) translate(0, -100%);
+            line-height: 70px;
+            transform-origin: left top;
+            display: block;
+            font-weight: bold;
+            color: #515151;
+            transition: all .35s ease;
+        }
+        @include xl {
+            font-size: 3.5rem;
+            position: absolute;
+            right: -30px;
+            transform-origin: left top;
+            transform: translateX(100%);
+            height: 120px;
+        }
+        @include xxl {
+            right: -40px;
+            font-size: 3.75rem;
+            height: 140px;
+            //height: 160px;
+        }
+        @include xxxl {
+            right: -56px;
+            font-size: 4.375rem;
+            height: 36%;
+        }
+        @include fullhd {
+            height: 39%;
+        }
+    }
+}

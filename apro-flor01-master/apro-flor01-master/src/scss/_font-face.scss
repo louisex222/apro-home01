@@ -1,0 +1,20 @@
+@font-face {
+    font-family: CHei3HK;
+    src: local(CHei3HK-Bold),
+      url(/path/to/CHei3HK-Bold.woff2) format("woff2"),
+      url(/path/to/CHei3HK-Bold.woff) format("woff"),
+      url(/path/to/CHei3HK-Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+  }
+  @font-face {
+    font-family: MyriadPro;
+    src: local(MyriadPro-Bold),
+      url(/path/to/MyriadPro-Bold.woff2) format("woff2"),
+      url(/path/to/MyriadPro-Bold.woff) format("woff"),
+      url(/path/to/MyriadPro-Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+  }

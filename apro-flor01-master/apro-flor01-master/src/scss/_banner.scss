@@ -1,0 +1,253 @@
+.normal-banner {
+    //border-bottom: 1px dotted salmon;
+    margin-top: 60px;
+    @include md {
+        margin-top: 120px;
+    }
+    @include h_limit {
+        margin-top: 100px;
+    }
+    @include h_600 {
+        margin-top: 100px;
+    }
+    @include h_700 {
+        margin-top: 140px;
+    }
+    @include h_800 {
+        margin-top: 180px;
+    }
+    @include h_900 {
+        margin-top: 210px;
+    }
+    @include md {
+        display: flex;
+    }
+    .text {
+        @include xs_md {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            padding: $gutter $gutter / 2 $gutter / 2;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+        }
+        @include md {
+            flex: auto;
+            width: 27%;
+            display: flex;
+            align-self: flex-end;
+            position: relative;
+            &:before {
+                content: attr(data-text);
+                display: block;
+                font-size: 10vw;
+                position: absolute;
+                color: #f4f4f4;
+                font-weight: bold;
+                z-index: 1;
+                left: -1.5%;
+                bottom: 110px;
+                line-height: 1em;
+            }
+            .text-content {
+                position: relative;
+                z-index: 6;
+                padding-left: 5vw;
+            }
+        }
+        @include xxl {
+            .text-content {
+                padding-left: 7vw;
+            }
+            &:before {
+                bottom: 120px;
+            }
+        }
+        @include xxxl {
+            .text-content {
+                padding-left: 9vw;
+            }
+            &:before {
+                bottom: 125px;
+            }
+        }
+    }
+    .space,
+    .gallery {
+        @include xs_md {
+            z-index: 1;
+            .swiper-slide {
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    padding-bottom: 68%;
+                }
+                img {
+                    display: none !important
+                }
+            }
+        }
+        @include md {
+            flex: auto;
+            width: 73%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &.border {
+            @include lg {
+                border-bottom: 1px solid $color-border;
+                padding-bottom: 20px;
+            }
+            @include xxl {
+                padding-bottom: 40px;
+            }
+            @include xxxl {
+                padding-bottom: 70px;
+            }
+        }
+    }
+    .space {
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            padding-bottom: 22%;
+            background-color: transparent;
+        }
+    }
+    .title {
+        font-size: 1.375rem;
+        color: $color-dark;
+        font-weight: bold;
+        line-height: 1.25em;
+        @extend %title_deco_blue;
+        @include md {
+            font-size: 2.5rem;
+            margin-bottom: 70px;
+        }
+        @include xl {
+            font-size: 2.75rem;
+        }
+        @include xxl {
+            font-size: 3.125rem;
+        }
+        @include xxxl {
+            font-size: 3.75rem;
+            margin-bottom: 90px;
+        }
+    }
+    .btn-scrolldown {
+        left: auto;
+        right: 5%;
+        bottom: 25%;
+        opacity: 1;
+        transform-origin: right top;
+        transform: rotate(90deg) translateX(120px);
+        .scrolldown {
+            border: none;
+        }
+    }
+    .page-banner {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        //border: 1px solid #000;
+        text-align: center;
+        @include md {
+            text-align: left;
+            margin-left: -14px;
+        }
+        @include xxl {
+            margin-left: -13px;
+        }
+    }
+    .banner-slide {
+        padding-bottom: 60px;
+        @include md {
+            padding-bottom: 70px;
+        }
+        @include xxxl {
+            padding-bottom: 90px;
+        }
+    }
+    .loader-line {
+        //width: calc(100% - 240px);
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: transparent;
+        position: absolute;
+        overflow: hidden;
+        bottom: 60px;
+        @include md {
+            bottom: 70px;
+            height: 6px;
+        }
+        @include xxl {
+            height: 8px;
+        }
+        @include xxxl {
+            bottom: 90px;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: $color-yellow;
+            z-index: 60;
+            transform-origin: left center;
+            animation: loader-line 6s linear;
+            animation-delay: .1s;
+        }
+        &.active {
+            &:before {
+                transform-origin: left center;
+                animation: loader-line-2 6s linear;
+                animation-delay: .1s;
+            }
+        }
+    }
+    &.single {
+        .banner-slide {
+            padding-bottom: 60px;
+            @include xs_xl {
+                padding-bottom: 0;
+            }
+        }
+        margin-bottom: 30px;
+        @include xs_xl {
+            margin-bottom: 70px;
+        }
+        .title {
+            // @include md {
+            //     font-size: 2.5rem;
+            //     margin-bottom: 60px;
+            // }
+            margin-bottom: 0;
+            @include xl {
+                margin-bottom: 60px;
+            }
+        }
+        .loader-line {
+            background-color: $color-yellow;
+            transform: scaleX(1);
+            z-index: 60;
+            bottom: 60px;
+            @include xs_xl {
+                bottom: 0;
+            }
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

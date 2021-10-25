@@ -1,0 +1,31 @@
+@charset "utf-8";
+// setting
+@import "setting";
+@import "mixin";
+@import "reset";
+//@import "aos";
+@import "swiper/swiper";
+@import "default";
+@import "ie";
+@import "font-face";
+
+.ruler{
+    width: 1px;
+    height: calc(755vh);
+    background-color: #000;
+    position: absolute;
+    z-index: 100;
+    display: none;
+    @include xs_md{
+        left: 24px;
+        height: calc(529vh);
+
+    }
+    @include md{
+        left: 67px;
+        height: calc(351vh);
+    }
+    @include xl{
+        left: 164px;
+    }
+}

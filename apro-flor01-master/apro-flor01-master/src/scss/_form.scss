@@ -1,0 +1,443 @@
+// select2
+.select-border-wrap {
+    position: relative;
+    border-radius: $rd;
+    display: inline-block;
+    @include md {
+        max-width: 200px;
+        .js-select {
+            font-size: 13px !important
+        }
+    }
+    &:after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border-left: 1px solid $color-border;
+        position: absolute;
+        right: 0;
+        top: 0;
+        pointer-events: none;
+    }
+    &:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        pointer-events: none;
+        @include icon(1);
+        opacity: 0.5;
+        z-index: 2;
+    }
+}
+
+.js-select {
+    width: 300px;
+    &.border {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        height: 40px;
+        line-height: 42px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: 'ducati-ext';
+        color: #666;
+        background-color: #fff;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.mobile {
+    .js-select {
+        font-size: 18px;
+        font-family: 'ducati-cond', $font-family;
+        font-weight: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: static;
+        transform: none;
+        border: none;
+        -webkit-appearance: none;
+        background-color: transparent;
+        height: 46px;
+        border-bottom: 1px solid $color-border;
+        outline: none;
+        box-shadow: none;
+        padding: 0 20px;
+        &.border {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: 40px;
+            line-height: 42px;
+            border: none;
+            //border: 1px solid $color-border;
+            font-size: 16px;
+            font-weight: normal;
+            font-family: 'ducati-ext';
+            color: #666;
+            background-color: #fff;
+            padding-left: 15px;
+            padding-right: 15px;
+            // &:after {
+            //     content: "";
+            //     display: block;
+            //     width: 40px;
+            //     height: 40px;
+            //     //background-color: #ddd;
+            //     position: absolute;
+            //     right: 0;
+            //     top: 0;
+            //     border-left: 1px solid #ddd;
+            //     z-index: 55;
+            //     pointer-events: none;
+            // }
+            // .switch {
+            //     background-color: #fff;
+            //     border: 1px solid #ddd;
+            //     padding: 11px 56px 11px 16px;
+            //     //border-bottom: 1px solid transparent;
+            //     transition: border-color .4s ease;
+            //     &:after {
+            //         display: none;
+            //     }
+            //     &:before {
+            //         width: 15px;
+            //         height: 15px;
+            //         right: 11px;
+            //         top: 13px;
+            //     }
+            // }
+            // .switchwrap {
+            //     line-height: 16px;
+            //     height: 16px;
+            //     display: block;
+            // }
+            // .switchtext {
+            //     font-size: 12px;
+            //     text-transform: uppercase;
+            //     font-family: $font-family;
+            //     font-weight: normal;
+            // }
+            // .options {
+            //     font-size: 12px;
+            //     font-family: $font-family;
+            //     line-height: 16px;
+            //     padding: 0;
+            //     li {
+            //         padding: 12px 17px;
+            //         line-height: 16px;
+            //         transition: all .2s ease;
+            //         color: #666;
+            //         &:hover {
+            //             background-color: #ebebeb;
+            //         }
+            //     }
+            // }
+        }
+        @include xl {
+            font-size: 18px;
+        }
+    }
+}
+
+.select2-container {
+    border-radius: 0;
+    width: 100% !important;
+    .select2-selection--single {
+        height: 46px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+        transition: background-color .2s, box-shadow .2s;
+        .select2-selection__rendered {
+            font-size: 18px;
+            font-family: 'ducati-cond', $font-family;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 10px 25px 6px;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            border-radius: 0;
+            position: relative;
+            &:after {
+                content: "";
+                display: block;
+                width: calc(100% - 50px);
+                border-bottom: 2px solid $color-border;
+                bottom: 0;
+                position: absolute;
+            }
+            //border: 1px solid $color-main;
+        }
+    }
+}
+
+.select2-container--open {
+    box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: none;
+    .select2-selection--single {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: $color-border;
+        .select2-selection__rendered {
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.select2-dropdown {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
+    border: none;
+    outline: none;
+    transition: opacity .25s;
+}
+
+.select2-results__options {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    li {
+        // cursor: pointer;
+        // transition: color 200ms;
+        // text-overflow: ellipsis;
+        // overflow: hidden;
+        font-size: 18px;
+        font-family: 'ducati-cond', $font-family;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 10px 25px 6px !important;
+        line-height: 28px;
+        color: #bbbcbc;
+        padding: 10px 0;
+        &:hover {
+            color: #777 !important;
+            background-color: transparent !important;
+        }
+    }
+}
+
+.select-border {
+    .select2-results__options {
+        border-top: 1px solid $color-border;
+        li {
+            font-size: 12px;
+            font-family: $font-family;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 10px 25px 6px !important;
+            line-height: 28px;
+            color: #bbbcbc;
+            padding: 10px 0;
+            transition: background-color .25s, color .25s;
+            &.select2-results__option--highlighted {
+                color: #666;
+            }
+            &:hover {
+                color: #666 !important;
+                background-color: #f1f1f1 !important;
+            }
+        }
+    }
+}
+
+.js-select {
+    &.border {
+        width: 100%;
+        &+.select2-container {
+            .select2-selection--single {
+                height: 40px;
+                background-color: #fff;
+                padding-right: 40px;
+                border: 1px solid $color-border;
+                transition: border-color .25s;
+                .select2-selection__rendered {
+                    //background-color: #fff;
+                    font-size: 12px !important;
+                    font-family: 'ducati-ext', $font-family !important;
+                    font-weight: 400;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    line-height: 44px;
+                    //padding: 10px 25px 6px;
+                    &:after {
+                        display: none;
+                    }
+                    //border: 1px solid $color-main;
+                }
+            }
+            &.select2-container--open {
+                //box-shadow: none;
+                .select2-selection--single {
+                    //background-color: #fff;
+                    background-color: transparent;
+                    background-color: #fff;
+                    border-color: transparent;
+                }
+                .select2-dropdown {
+                    top: 1px;
+                }
+            }
+            .select2-selection__arrow {
+                display: none;
+            }
+        }
+    }
+}
+
+.info-link {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: $color-gray;
+    border-bottom: 1px solid $color-gray;
+    margin-left: 20px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+    //一般狀態
+    &+label {
+        display: inline-block;
+        text-align: left;
+        cursor: pointer;
+        color: $color-gray;
+        line-height: 1.75em;
+        margin-bottom: 8px;
+        transition: all 0.3s ease;
+        padding-right: 1em;
+        font-size: 16px;
+        position: relative;
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background-color: #fff;
+            border: 1px solid $color-border;
+            border-radius: $rd;
+            margin-top: -4px;
+            transition: border-color .3s;
+        }
+        // &:after {
+        //     content: "";
+        //     display: inline-block;
+        //     vertical-align: middle;
+        //     overflow: hidden;
+        //     width: 6px;
+        //     height: 6px;
+        //     position: absolute;
+        //     left: 0;
+        //     top: 50%;
+        //     background-color: #fff;
+        //     border-radius: 50%;
+        //     @if $lang=='en' {
+        //         margin: -3px 0 0 7px;
+        //     }
+        //     @else {
+        //         margin: -2px 0 0 7px;
+        //     }
+        // }
+    }
+    //按下後
+    &:checked+label {
+        color: #000;
+        font-weight: normal;
+        //前面的圈圈
+        &:before {
+            @include icon(9);
+            border-color: $color-black;
+        }
+    }
+}
+
+input[type="radio"] {
+    &+label {
+        &:before {
+            border-radius: 50%;
+        }
+    }
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.form {
+    // >.row {
+    //     >[class^="col-"] {
+    //         margin-bottom: 10px;
+    //         // @include xs_sm {
+    //         //     margin-bottom: 15px;
+    //         // }
+    //     }
+    // }
+    // .btn {
+    //     margin-top: 20px;
+    // }
+    // .field {
+    //     padding-bottom: 10px;
+    //     @include md {
+    //         padding-top: 20px;
+    //         padding-bottom: 20px;
+    //     }
+    // }
+    input,
+    select {
+        border: none;
+        border: 1px solid #c3c3c3;
+        //height: 40px;
+        width: 100%;
+        background-color: transparent;
+        font-family: $font-family;
+        line-height: 50px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color .3s ease;
+        &:focus {
+            border-color: $color-dark;
+            color: $color-dark;
+            font-weight: bold;
+        }
+    }
+    select {
+        background-color: #c3c3c3;
+    }
+    textarea {
+        border: none;
+        border: 1px solid #c3c3c3;
+        padding: 15px;
+        //height: 40px;
+        width: 100%;
+        background-color: transparent;
+        font-family: $font-family;
+        font-size: 16px;
+        line-height: 1.75em;
+        outline: none;
+        transition: border-color .3s ease;
+        &:focus {
+            border-color: $color-black;
+            color: $color-black;
+            font-weight: bold;
+        }
+    }
+}

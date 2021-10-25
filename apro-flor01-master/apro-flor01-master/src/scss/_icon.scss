@@ -1,0 +1,86 @@
+$iconsetCount:50; //必填，iconset長度數量
+//適用於before
+@mixin icon($index) {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("../images/layout/iconset.svg");
+    background-size: auto 100%;
+    $iconPosX: percentage(( 100 / ($iconsetCount - 1)) * ( $index - 1) / 100);
+    background-position: round($iconPosX * 100) / 100 0;
+}
+
+@mixin iconPos($index) {
+    background-size: auto 100%;
+    $iconPosX: percentage(( 100 / ($iconsetCount - 1)) * ( $index - 1) / 100);
+    background-position: round($iconPosX * 100) / 100 0;
+}
+
+@for $i from 1 through $iconsetCount {
+    .icon-#{$i} {
+        $iconPosX: percentage(( 100 / ($iconsetCount - 1)) * ( $i - 1) / 100);
+        &:before {
+            background-position: round($iconPosX * 100) / 100 0;
+        }
+    }
+}
+
+.icon {
+    font-size: 0;
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url("../images/layout/iconset.svg");
+        background-size: auto 100%;
+        width: 30px;
+        height: 30px;
+    }
+    &.w2 {
+        &:before {
+            width: 60px;
+        }
+    }
+}
+
+.icon-before {
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        // width: 100%;
+        // padding-bottom: 100%;
+        background-image: url("../images/layout/iconset.svg");
+    }
+}
+
+.icon-after {
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        // width: 100%;
+        // padding-bottom: 100%;
+        background-image: url("../images/layout/iconset.svg");
+    }
+}
+
+// .icon-fb {
+//     display: inline-block !important;
+//     width: 30px;
+//     height: 30px;
+//     font-size: 0;
+//     opacity: 0.5;
+//     transition: opacity .3s;
+//     &:before {
+//         width: 100%;
+//         height: 100%;
+//         @include icon(6)
+//     }
+//     &:hover {
+//         opacity: 1;
+//         &:before {
+//             @include iconPos(7)
+//         }
+//     }
+// }

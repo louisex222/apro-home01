@@ -1,0 +1,261 @@
+.pd-article {
+    padding-top: $gutter;
+    @include md {
+        padding-top: 60px;
+    }
+    @include xxl {
+        padding-top: 80px;
+    }
+    @include xxxl {
+        padding-top: 100px;
+    }
+    >div {
+        >img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .row {
+        margin-bottom: $gutter;
+        @include md {
+            margin-bottom: 60px;
+        }
+        @include xxl {
+            margin-bottom: 80px;
+        }
+        @include xxxl {
+            margin-bottom: 100px;
+        }
+        .row {
+            margin-bottom: 0;
+        }
+    }
+    @include xs_sm {
+        img {
+            margin-bottom: $gutter / 2;
+        }
+    }
+    .title-zh {
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 1.25em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid $color-border;
+        padding-bottom: 0.5em;
+        @include xs_md {
+            padding-bottom: $gutter / 2;
+            margin-bottom: $gutter / 2;
+        }
+        @include md {
+            font-size: 1.5em;
+        }
+        @include xxl {
+            font-size: 1.75em;
+        }
+        @include xxxl {
+            font-size: 2em;
+        }
+    }
+    .subtitle-zh {
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 1.25em;
+        margin-bottom: 0.5em;
+        @include xs_md {
+            margin-bottom: $gutter / 2;
+        }
+        @include md {
+            font-size: 1.25em;
+            margin-bottom: 0.75em;
+        }
+        @include xxl {
+            font-size: 1.375em;
+        }
+        @include xxxl {
+            font-size: 1.5em;
+        }
+    }
+    .title-en {
+        font-family: $font-family-en;
+        font-size: 1.875em;
+        font-weight: bold;
+        line-height: 1.25em;
+        color: #c7c7c7;
+        margin-bottom: 0.5em;
+        @include md {
+            font-size: 2em;
+        }
+        @include xxl {
+            font-size: 2.5em;
+        }
+        @include xxxl {
+            font-size: 3em;
+        }
+    }
+    p {
+        font-size: .9375em;
+        @include xs_md {
+            margin-bottom: $gutter / 2;
+        }
+        @include md {
+            font-size: 1em;
+        }
+        @include xxxl {
+            font-size: 1.125em;
+        }
+    }
+    .office-hero {
+        font-family: $font-family-en;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 1.25em;
+        color: #c7c7c7;
+        margin-bottom: 0.5em;
+        @include md {
+            font-size: 2.75em;
+        }
+        @include xxl {
+            font-size: 3.25em;
+        }
+        @include xxxl {
+            font-size: 3.75em;
+        }
+    }
+    .office-sub {
+        font-family: $font-family-en;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1.25em;
+        color: #c7c7c7;
+        margin-bottom: 0.5em;
+        @include md {
+            font-size: 1.75em;
+        }
+        @include xxl {
+            font-size: 2em;
+        }
+        @include xxxl {
+            font-size: 2.25em;
+        }
+    }
+    .hasbg {
+        background-size: cover;
+        @include xs_md {
+            background: none !important;
+            .title-en {
+                color: #c7c7c7 !important;
+            }
+        }
+        .row {
+            @include xs_md {
+                background: none !important;
+            }
+            @include md {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: right center;
+            }
+            [class^="col-"] {
+                @include md {
+                    padding: $gutter;
+                    min-height: 360px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                }
+            }
+        }
+        .mobile-img {
+            @include md {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.sales {
+    .fz-B {
+        margin-bottom: 0;
+    }
+    .head {
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            left: -15px;
+            border-left: 1px solid $color-border;
+        }
+    }
+}
+
+.add-en {
+    font-size: .75em;
+    color: #999;
+    line-height: 1.5em;
+    font-weight: normal;
+    @include md {
+        font-size: .8125em;
+    }
+    @include xl {
+        font-size: .875em;
+    }
+}
+
+.sales-store {
+    ul {
+        display: block;
+        overflow: hidden;
+        padding-bottom: $gutter;
+        @include md {
+            padding-bottom: 60px;
+        }
+        @include xxl {
+            padding-bottom: 70px;
+            li {
+                font-size: 1.125em;
+            }
+        }
+        @include xxxl {
+            padding-bottom: 80px;
+        }
+    }
+}
+
+.spec {
+    display: block;
+    >li {
+        margin-bottom: 10px;
+        color: #333;
+        ul {
+            //border-left: 1px solid #ccc;
+            >li {
+                padding-left: 20px;
+                font-size: .875em;
+            }
+        }
+        @include sm {
+            display: flex;
+            .field-title {
+                flex: 1;
+                max-width: 40%;
+            }
+            .field-value {
+                flex: 1;
+            }
+        }
+    }
+    strong {
+        &+span {
+            margin-left: 20px;
+        }
+    }
+    .field-title {
+        font-weight: normal;
+        padding-right: 10px;
+    }
+}

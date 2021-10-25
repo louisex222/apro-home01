@@ -1,0 +1,16 @@
+.sass-cache/
+*.css.map
+*.map
+*.db
+@*.*
+~*.*
+**/@*/
+**/_notes/
+database.php
+Recaptcha.php
+/node_modules
+.idea/
+*.tmp
+config.php
+
+

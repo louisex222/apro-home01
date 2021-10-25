@@ -1,0 +1,158 @@
+.quick-link {
+    @include xs_lg {
+        padding: $gutter / 2;
+    }
+}
+
+.link-video {
+    @include xs_lg {
+        margin-top: $gutter;
+    }
+}
+
+.link-share {
+    .arrows {
+        height: 30px;
+        width: 60px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 6;
+        display: flex;
+        @include xs_sm {
+            display: none;
+        }
+        @include md {
+            height: 50px;
+            width: 100px;
+            left: 50%;
+            transform: translateX(-100%);
+        }
+    }
+    .btn-prev-quick,
+    .btn-next-quick {
+        width: 30px;
+        height: 30px;
+        position: static;
+        flex: 1;
+        margin: 0;
+        &.swiper-button-disabled {
+            opacity: 0.7;
+            pointer-events: auto;
+            cursor: not-allowed !important;
+        }
+        @include md {
+            height: 50px;
+            width: 50px;
+        }
+    }
+    .btn-prev-quick {
+        background-color: $color-yellow;
+        &:after {
+            width: 22px;
+            height: 22px;
+            @include icon(8)
+        }
+    }
+    .btn-next-quick {
+        background-color: $color-yellow;
+        &:after {
+            width: 22px;
+            height: 22px;
+            @include icon(3)
+        }
+    }
+}
+
+.quick-item {
+    @include sm {
+        display: flex;
+        >div {
+            flex: 1;
+            max-width: 50%;
+        }
+    }
+    .fz-B {
+        @include lg_xxl {
+            font-size: 1.125rem;
+        }
+        @include xl_xxl {
+            font-size: 1.25rem;
+        }
+        @include xxl_xxxl {
+            font-size: 1.5rem;
+        }
+    }
+    .text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: $gutter / 2;
+        background-color: #f2f2f2;
+        @include xl {
+            padding: 30px;
+        }
+        @include xxl {
+            padding: 35px $gutter;
+        }
+        @include xxxl {
+            padding: 80px;
+        }
+    }
+    .desc {
+        color: #696969;
+        font-weight: bold;
+        margin-bottom: 2em;
+        @include lg_xxl {
+            margin-bottom: 1em;
+            font-size: .875rem;
+            line-height: 1.5em;
+        }
+    }
+    &.video {
+        @include xs_sm {
+            flex-direction: column-reverse;
+            display: flex;
+        }
+        .text {
+            background-color: $color-yellow;
+        }
+        .desc {
+            color: $color-dark;
+        }
+        .image {
+            position: relative;
+            &:before {
+                content: "";
+                @include icon(11);
+                width: 72px;
+                height: 72px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                @include md {
+                    width: 88px;
+                    height: 88px;
+                }
+                @include lg {
+                    width: 72px;
+                    height: 72px;
+                }
+                @include xl {
+                    width: 88px;
+                    height: 88px;
+                }
+                @include xxl {
+                    width: 96px;
+                    height: 96px;
+                }
+                @include xxxl {
+                    width: 108px;
+                    height: 108px;
+                }
+            }
+        }
+    }
+}

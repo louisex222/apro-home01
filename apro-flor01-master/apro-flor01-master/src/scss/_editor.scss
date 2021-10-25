@@ -1,0 +1,141 @@
+.editor-text {
+    width: 100%;
+    max-width: 665px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    @include md {
+        padding-bottom: 30px;
+    }
+    @include lg {
+        padding-bottom: 40px;
+    }
+    .body {
+        width: 100%;
+        max-width: 665px;
+        margin: 0 auto;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            @include md {
+                margin-bottom: 30px;
+            }
+            // @include lg {
+            //     margin-bottom: 40px;
+            // }
+        }
+    }
+    strong {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 20px;
+        @include md {
+            margin-bottom: 30px;
+        }
+        // @include lg {
+        //     margin-bottom: 40px;
+        // }
+    }
+    p {
+        padding-bottom: 20px;
+        @include md {
+            padding-bottom: 30px;
+            // }
+            // @include lg {
+            //     padding-bottom: 40px;
+            // }
+        }
+    }
+    .link,
+    .btn {
+        margin-bottom: 20px;
+        display: inline-block;
+        @include md {
+            margin-bottom: 30px;
+        }
+    }
+    .remark {
+        font-size: 14px;
+        //font-weight: lighter;
+        color: $color-gray;
+        @include xl {
+            font-size: 16px;
+        }
+    }
+    ul.remark {
+        li {
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: $color-border;
+                vertical-align: middle;
+                margin: -4px 10px 0 2px;
+                border-radius: 50%;
+            }
+        }
+    }
+    ol.remark {
+        counter-reset: section;
+        padding-left: 17px;
+        li {
+            list-style: decimal;
+        }
+    }
+}
+
+.editor-img {
+    padding-bottom: 20px;
+    @include md {
+        padding-bottom: 30px;
+    }
+    @include lg {
+        padding-bottom: 40px;
+    }
+}
+
+.d-stage {
+    margin-bottom: 20px;
+    border-radius: $rd;
+}
+
+.d-thumb {
+    margin-bottom: 60px;
+    .swiper-wrapper {
+        justify-content: center;
+    }
+    .swiper-slide {
+        overflow: hidden;
+        border-radius: $rd;
+        position: relative;
+        cursor: pointer;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0;
+            background-color: transparent;
+            position: absolute;
+            bottom: 0;
+            transition: all .3s;
+        }
+        &.swiper-slide-thumb-active {
+            &:after {
+                height: 3px;
+                background-color: $color-main;
+            }
+        }
+    }
+}
+
+.d-slide {
+    &.divider {
+        .container {
+            border-bottom: 2px solid $color-border-light;
+        }
+    }
+}

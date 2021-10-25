@@ -1,0 +1,100 @@
+.fz-A {
+    font-size: 1.375em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: $color-dark;
+    line-height: 1.375em;
+    @include md {
+        font-size: 2.25em;
+    }
+    @include xxl {
+        font-size: 2.375em;
+    }
+    @include xxxl {
+        font-size: 2.5em;
+    }
+}
+
+.fz-B {
+    font-size: 1.125em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: $color-dark;
+    line-height: 1.375em;
+    @include sm {
+        font-size: 1.125em;
+    }
+    @include md {
+        font-size: 1.5em;
+    }
+    @include xl {
+        font-size: 1.75em;
+    }
+    @include xxl {
+        font-size: 1.875em;
+    }
+    @include xxxl {
+        font-size: 2em;
+    }
+}
+
+.fz-C {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    @include md {
+        font-size: 1.25em;
+    }
+    @include xxl {
+        font-size: 1.375em;
+    }
+    @include xxxl {
+        font-size: 1.5em;
+    }
+    @extend %title_deco_blue;
+}
+
+%title_deco_blue {
+    &:after {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $color-main;
+        margin-top: 0.5em;
+        @include md {
+            width: 42px;
+            height: 5px;
+        }
+    }
+}
+
+%title_deco_blue_before {
+    &:before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $color-main;
+        margin-bottom: 1em;
+        @include md {
+            width: 42px;
+            height: 5px;
+        }
+    }
+}
+
+%title_deco_gray {
+    &:after {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #d2d2d2;
+        margin-top: 0.5em;
+        @include md {
+            width: 42px;
+            height: 5px;
+        }
+    }
+}

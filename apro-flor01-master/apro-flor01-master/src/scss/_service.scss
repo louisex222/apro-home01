@@ -1,0 +1,331 @@
+.service-intro {
+    background-color: transparent;
+    .content {
+        @include md {
+            padding-right: 5% !important;
+        }
+        @include xl {
+            padding-right: 10% !important;
+        }
+        @include xxxl {}
+    }
+    .text {
+        position: relative;
+        border-bottom: 1px solid $color-border;
+        @include xs_md {
+            padding-bottom: 40px;
+        }
+        // @include xs_md {
+        //     padding-bottom: 40px;
+        //     .fz-B,
+        //     .fz-zh-C {
+        //         margin-bottom: 0;
+        //         line-height: 1.375em;
+        //     }
+        //     .fz-en-B {
+        //         margin-bottom: 0;
+        //         line-height: 1.5em;
+        //     }
+        //     p {
+        //         margin-top: 40px;
+        //     }
+        // }
+        @include md {
+            border-bottom: 1px solid $color-border;
+            padding-right: 29%;
+            padding-bottom: 100px;
+            .fz-B {
+                position: absolute;
+                display: block;
+                width: 1.25em;
+                line-height: 1.125em;
+                font-weight: bold;
+                text-align: right;
+                right: 0;
+                top: 100px;
+            }
+        }
+    }
+}
+
+.service-flow {
+    background-color: $color-bg;
+    @include sm {
+        .swiper-wrapper {
+            display: block;
+            transform: none;
+        }
+    }
+    .content {
+        padding-top: 0;
+        @include md {
+            padding-right: 5% !important;
+        }
+        @include xl {
+            padding-right: 10% !important;
+        }
+        @include xxxl {}
+    }
+}
+
+.brand-swiper {
+    @include xs_md {
+        .brand-next {
+            right: -20px;
+        }
+        .brand-prev {
+            left: -20px;
+        }
+    }
+    @include md {
+        overflow: hidden;
+        //border: 1px solid #000;
+        .ctrl {
+            display: none;
+        }
+        .swiper-wrapper {
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+        .swiper-slide {
+            display: flex;
+            width: 25%;
+            float: left;
+            align-items: center;
+            justify-content: center;
+            img {
+                display: block;
+                width: 92%;
+                height: auto;
+                @include xxl {
+                    max-width: 86%;
+                }
+                // @include xxxl {
+                //     max-width: 86%;
+                // }
+            }
+        }
+    }
+}
+
+.service-flow-wrap {
+    .fz-en-B {
+        margin-bottom: 2.25em;
+    }
+    .fz-B {
+        margin-bottom: 1.25em;
+    }
+    .content {
+        height: 100%;
+    }
+    @include xs_md {
+        .page-flow {
+            position: static;
+            margin-top: 15px;
+        }
+    }
+}
+
+.service-flow-item {
+    position: relative;
+    @include sm {
+        padding-right: 40%;
+        padding-bottom: 80px;
+        &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            border-right: 1px solid $color-border;
+            position: absolute;
+            bottom: 0;
+            right: 0.75em;
+            height: calc(100% - 120px);
+        }
+        &:last-of-type {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    @include xxl {
+        padding-right: 40%;
+        padding-bottom: 120px;
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.num-style {
+    @include xs_sm {
+        display: flex;
+        align-items: center;
+        .fz-B {
+            margin: 0 0 0 6px;
+        }
+    }
+    @include sm {
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: right;
+    }
+    span {
+        font-weight: 600;
+        color: $color-main;
+        font-size: 1.5em;
+        @include xs_sm {
+            font-size: 1.125em;
+        }
+    }
+    .fz-B {
+        @include sm {
+            display: block;
+            width: 1.25em;
+            line-height: 1.125em;
+            font-weight: bold;
+        }
+    }
+}
+
+.service-brand {
+    background-color: $color-main;
+    .content {
+        height: 100%;
+        border-top: 1px solid $color-border;
+        background-color: #fff;
+        @include xs_sm {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @include sm_md {
+            padding-left: $gutter;
+            padding-right: $gutter;
+        }
+        @include md {
+            padding-right: 5% !important;
+        }
+        @include xl {
+            padding-right: 10% !important;
+        }
+        @include xxxl {}
+    }
+    .text {
+        @include xl {
+            width: 90%;
+        }
+        @include xxxl {
+            width: 80%;
+        }
+    }
+}
+
+.service-customized {
+    background-color: #666;
+    background: url('../images/service/bg-customized.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    p {
+        color: #fff;
+    }
+    .fz-en-B {
+        margin-bottom: 0;
+        &+.fz-zh-C {
+            margin-bottom: 4.5em;
+        }
+    }
+    .content-wrap {
+        @include md {
+            padding-left: 50% !important;
+        }
+    }
+    .content {
+        background-color: transparent;
+        justify-content: flex-start;
+        min-height: 100vh;
+    }
+    .text {
+        width: 100%;
+    }
+    @include xs_lg {
+        .fz-B {
+            letter-spacing: 5px;
+        }
+    }
+    @include lg {
+        .fz-B {
+            display: block;
+            width: 1.125em;
+            position: absolute;
+            left: -75%;
+            line-height: 1.375em;
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+    }
+}
+
+.service-lifrstyle {
+    @include xs_lg {
+        .fz-B {
+            letter-spacing: 5px;
+        }
+        background-image:none !important;
+    }
+    @include lg {
+        background: url('../images/service/bg-lifrstyle.jpg') no-repeat right bottom;
+        .content-wrap {
+            padding-top: 17%;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: $color-bg;
+            z-index: 1;
+        }
+        .bg-img {
+            display: none;
+        }
+        .content {
+            background-color: #fff;
+            &:after {
+                content: "";
+                display: block;
+                width: 22%;
+                top: 30%;
+                height: 2px;
+                border-top: 1px solid #000;
+                position: absolute;
+                left: 0;
+            }
+        }
+        .fz-B {
+            display: block;
+            width: 1.125em;
+            position: absolute;
+            left: -22%;
+            line-height: 1.375em;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+    }
+    @include xxl {
+        .content {
+            &:after {
+                width: 25%;
+                top: 30%;
+            }
+        }
+    }
+    .fz-en-B {
+        margin-bottom: 0;
+        &+.fz-zh-C {
+            margin-bottom: 4.5em;
+        }
+    }
+}

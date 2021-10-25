@@ -1,0 +1,108 @@
+//選單開啟時
+.nav-open {
+    overflow: hidden;
+    .hamburger {
+        span {
+            @include xs_lg {
+                transform: rotate(-90deg);
+            }
+            @include lg {
+                background-color: transparent !important;
+                &:before {
+                    top: 50%;
+                    transform: rotate(-45deg);
+                }
+                &:after {
+                    top: 50%;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    .idx-cprt {
+        opacity: 0 !important;
+    }
+    .nav {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .color-header,
+    .header {
+        .focus-menu {
+            a {
+                color: #fff;
+            }
+        }
+        .btn-nav-toggle {
+            color: #fff;
+        }
+    }
+    .header {
+        //background-color: transparent;
+        border-bottom: 1px solid transparent;
+        @include xs_xl {
+            box-shadow: 0px 5px 22px -3px rgba(0, 0, 0, 0);
+            border-bottom: 1px solid $color-border;
+        }
+        @include md {
+            &,
+            &.release {
+                height: 100px;
+                background-color: #fff;
+            }
+        }
+        @include xxl {
+            height: 120px;
+        }
+        @include xxxl {
+            height: 160px;
+        }
+    }
+    .main-nav {
+        >li {
+            transform: translateY(0);
+            opacity: 1;
+            @include xs_xl {
+                // @for $i from 1 through 6 {
+                //     &:nth-of-type(#{$i}) {
+                //         transition-delay: 0.06s * $i;
+                //     }
+                // }
+            }
+            @include xl {
+                @for $i from 1 through 6 {
+                    &:nth-of-type(#{$i}) {
+                        transition-delay: 0.1s + 0.06s * $i;
+                    }
+                }
+                &:hover {
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+}
+
+.show-sub-nav {
+    .sub-nav {
+        visibility: visible;
+        pointer-events: auto;
+        opacity: 1;
+        @include xs_xl {
+            .menu-second {
+                transform: translateY(0);
+            }
+        }
+        @include xl {}
+    }
+    &.show-third {
+        .menu-second {
+            @include xs_xl {
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+            }
+        }
+    }
+}

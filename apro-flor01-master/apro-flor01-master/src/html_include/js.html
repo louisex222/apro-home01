@@ -1,0 +1,59 @@
+<div id="sorryforie">
+    <div>
+        <p class="fz-B">
+            抱歉，為了您的瀏覽體驗及安全性，本網站不支援IE瀏覽器，請參考下方常用瀏覽器。
+        </p>
+        <div class="browser">
+            <a href="https://www.microsoft.com/zh-tw/windows/microsoft-edge" title="Microsoft edge">
+                <img src="images/layout/edge.png" alt="">
+                <span>Edge</span>
+            </a>
+            <a href="https://www.google.com/intl/zh-TW/chrome/" title="Google Chrome">
+                <img src="images/layout/chrome.png" alt="">
+                <span>Chrome</span>
+            </a>
+            <a href="https://www.mozilla.org/zh-TW/firefox/new/" title="Mozilla Firefox">
+                <img src="images/layout/firefox.png" alt="">
+                <span>Firefox</span>
+            </a>
+            <a href="https://www.opera.com/zh-tw" title="Opera">
+                <img src="images/layout/opera.png" alt="">
+                <span>Opera</span>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="loader">
+    <div class="yellow"></div>
+    <div class="blue"></div>
+</div>
+<script>
+    var brwr = navigator.userAgent;
+    if (
+        brwr.match(/rv:11.0/i) ||
+        brwr.match(/MSIE 10.0/i) ||
+        brwr.match(/MSIE 9.0/i) ||
+        brwr.match(/MSIE 8.0/i) ||
+        brwr.match(/MSIE 7.0/i)
+    ) {
+        var element = document.getElementById("sorryforie");
+        element.className += "active";
+
+    }
+</script>
+<script src="js/vendor.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+<script src="js/main.js?=20200508"></script>
+<script>
+    AOS.init({
+        offset: 200,
+        duration: 700, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+    });
+</script>

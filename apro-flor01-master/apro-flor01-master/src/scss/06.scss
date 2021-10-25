@@ -1,0 +1,232 @@
+@charset "utf-8";
+// setting
+@import "setting";
+@import "mixin";
+.home01-template-06 {
+    padding-bottom: 60px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 71.765vh;
+    // border: 1px solid #f7f7f7;
+    background-size: cover;
+    background-position: center;
+    background-size: 0;
+    h3{
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%,50px);
+        font-family: MicrosoftJhengHei;
+        font-weight: bold;
+        letter-spacing: 1.8px;
+        color: #9c7456;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+    padding-bottom: 60px;
+    width: 100%;
+    overflow: hidden;
+    @include xs_md {
+        padding-bottom: 0;
+        height: 40vh;
+        h3{
+            font-size: 24px;
+        }
+    }
+    @include md {
+        padding-bottom: 0px;
+        height: 25vh;
+        h3{
+            font-size: 28px;
+            top: 4.5vw;
+        }
+    }
+    @include lg {
+        padding-bottom: 0;
+        height: 31.71875vw;
+    }
+    @include xl{
+        h3{
+        font-size: calc(28/1100*100vw);
+        top: 7.5vw;
+        }
+    }
+    @include xxl{
+        h3{
+            font-size: 36px;
+    
+            }
+    }
+    @include super{
+        h3{
+            top: 9.5vw;
+        }
+    }
+    @include xl-1200{
+        background-attachment: fixed;
+        
+    }
+    @include h_720{
+        background-attachment: fixed;
+    }
+    @include h_1024{
+        background-attachment: initial;
+        
+    }
+    .container {
+        position: relative;
+        height: 100%;
+        @include md{
+            padding:  0 64px;
+        }
+        @include lg {
+            border-bottom: 1px solid $color-gray;
+            display: flex;
+            align-items: center;
+        }
+        @include xl {
+            padding:  0 80px;
+        }
+        @include xxl {
+            padding:  0 100px;
+        }
+        .swiper-wrap {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            flex: 5;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            @include xs_md{
+                padding: 0 6.5417vw;
+            }
+            @include lg {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            @include xl {
+                padding-left: 70px;
+                padding-right: 70px;
+            }
+            @include xxxl {
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+            .swiper-container {
+                @include xs_lg {
+                    padding-bottom: 20px;
+                }
+                .swiper-wrapper{
+                    align-items: center;
+                }
+                .swiper-slide {
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        max-width: 7.8125vw;
+                        margin: 20px auto;
+                        filter: grayscale(1);
+                        transition: 0.6s ease;
+                    }
+                    &:hover{
+                        transition: 0.6s ease;
+                        img{
+                            filter:grayscale(0)
+                        }
+                    }
+                    @include xs_md{
+                        min-width: 27.8125vw;
+                        img{
+                            max-width: 15.8125vw;
+                        }
+                    }
+                    @include md{
+                        min-width: 20.8125vw;
+                        img{
+                            max-width: 5.8125vw;
+                        }
+                    }
+                    @include xl{
+                        min-width: 7.8125vw;
+                        img{
+                            max-width: 3.8125vw;
+                        }
+                    }
+                    @include xxl{
+                        min-width: 7.8125vw;
+                        img{
+                            max-width: 2.8125vw;
+                        }
+                    }
+                }
+                @include super{
+                    top: 45px;
+                }
+            }
+        }
+    }
+    .swiper-pagination {
+        bottom: 3.90625vw;
+       
+        .swiper-pagination-bullet {
+            height: 30px;
+            width: 69px;
+            margin: 0 12px !important;
+            border-radius: 0;
+            position: relative;
+            background-color: transparent;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 69px;
+                background-color: #dedede;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                transition: 0.3s ease;
+                height: 3px;
+                outline: none;
+            }
+        }
+        .swiper-pagination-bullet-active {
+            &::before{
+                top: 45%;
+                transition: 0.3s ease;
+                background-color: #ffc44d;
+               height: 8px;
+                
+            }
+        }
+        @include xs_md{
+            bottom: 9.90625vw;
+            display: none;
+            .swiper-pagination-bullet{
+                width: 30px;
+            }
+        }
+        @include md {
+            bottom: 6.90625vw;
+            .swiper-pagination-bullet {
+                width: 30px;
+            }
+        }
+        @include lg {
+            // display: none;
+        }
+        @include xl {
+            bottom: 6.4583vw;
+            .swiper-pagination-bullet {
+                width: 69px;
+            }
+        }
+        @include super{
+            bottom: 5.4583vw;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+
+
+body {
+    font-family: $font-family;
+    font-weight: normal;
+    font-size: 16px;
+    //color: $color-black;
+    overflow-x: hidden !important;
+    color: $color-dark;
+    // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    //background-color: #FAFAFA;
+}
+
+sup {
+    transform: translateY(-.2em);
+    display: inline-block;
+}
+
+.pages {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    @include xl {
+        background-attachment: fixed;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $color-dark;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.container {
+    @include md {
+        padding-left: $edge-md;
+        padding-right: $edge-md;
+    }
+    @include xl {
+        padding-left: $edge-xl;
+        padding-right: $edge-xl;
+    }
+    @include xxl {
+        padding-left: $edge-xxl;
+        padding-right: $edge-xxl;
+    }
+    // @include xxxl {
+    //     padding-left: $edge-xxxl;
+    //     padding-right: $edge-xxxl;
+    // }
+}

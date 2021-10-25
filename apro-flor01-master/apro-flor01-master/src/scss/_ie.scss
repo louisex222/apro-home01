@@ -1,0 +1,80 @@
+.ie {
+    .nav-right {
+        @include lg {
+            position: absolute;
+            right: 0;
+            top: 44px;
+        }
+    }
+    .ducati {
+        transform: translate(-50%, -50%);
+    }
+}
+
+#sorryforie {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: $color-black;
+    left: 0;
+    top: 0;
+    display: none;
+    color: #fff;
+    &.active {
+        display: block !important;
+    }
+    >div {
+        width: 640px;
+        height: 300px;
+        border: 1px solid $color-gray;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -180px 0 0 -320px;
+        padding: 30px;
+        text-align: center;
+        display: block !important;
+    }
+    p {
+        line-height: 1.75em;
+        font-size: 20px;
+        display: block !important;
+        color: $color-border;
+    }
+    .browser {
+        font-size: 0;
+        display: block !important;
+        img {
+            display: inline-block !important;
+            width: 70%;
+            height: auto;
+            border: none;
+            outline: none;
+        }
+        span {
+            color: #fff;
+            font-size: 14px;
+            display: block !important;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+        a {
+            display: inline-block !important;
+            width: 25%;
+            padding: 10px;
+            vertical-align: middle;
+            text-align: center;
+            transition: all .3s ease;
+            text-decoration: none;
+            margin-top: 10px;
+            &:hover {
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

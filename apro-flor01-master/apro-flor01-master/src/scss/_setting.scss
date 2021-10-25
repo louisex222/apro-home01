@@ -1,0 +1,65 @@
+// RWD ============================================
+$gutter:50px;
+$pd-md:15%;
+$pd-lg:8%;
+$pd-xl:8%;
+$pd-xxxl:10%;
+$edge-xxxl:135px;
+$edge-xxl:100px;
+$edge-xl:80px;
+$edge-md:64px;
+// RWD ============================================
+$xs:0;
+$sm:576px;
+$md:740px;
+$lg:980px;
+$lg-1024:1024px;
+$xl:1100px; //laptop 要照顧 1280 / 1366 / 1440 // pad pro
+$xl-1200: 1200px;
+$xl-1366: 1366px;
+$xxl:1500px; //大螢幕 要照顧 1680 / 1920
+$xxxl:1800px;
+$super:2200px;
+//MAX-WIDHT ============================================
+$mxw-sm:100%;
+$mxw-md:100%;
+$mxw-lg:100%;
+$mxw-xl:100%;
+$mxw-xxl:100%;
+$mxw-xxxl:100%;
+$mxw-super:$mxw-xxxl;
+//sass-mq ============================================
+$mq-responsive: true;
+$mq-breakpoints: ( "xs": $xs, "sm": $sm, "md": $md, "lg": $lg, "xl": $xl, "xxl": $xxl, "xxxl": $xxxl, "super": $super);
+$puredriller-breakpoints: ( xs: $xs, sm: $sm, md: $md, lg: $lg, xl: $xl, xxl:$xxl, xxxl:$xxxl, super:$super) !default;
+// $puredriller-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1200px, xxxl: 1500px, super: 1920px) !default;
+$puredriller-max-widths: ( sm: $mxw-sm, md: $mxw-md, lg: $mxw-lg, xl: $mxw-xl, xxl: $mxw-xxl, xxxl: $mxw-xxxl, super: $mxw-super) !default;
+$font-family: 'Noto Serif TC',
+'Lora',
+serif;
+$font-family-en: 'Lora',
+"Noto Serif TC",
+serif;
+$text-family:'Noto Sans TC',
+"PingFang",
+"PingFangTC",
+"Microsoft JhengHei",
+Helvetica,
+Arial,
+sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Noto Sans TC', sans-serif;
+// color
+$color-main:#2f4642;
+$color-dark:#373737;
+$color-navy:#74838e;
+$color-light:#ece2a8;
+$color-black:#000;
+$color-gray:#cbcbcb;
+$color-white:#fafafa;
+$color-border:#8f8f8f; //rgb(214, 214, 214); //rgba(187, 188, 188, 0.5);
+$color-border-light:#ccdae0;
+$border-trsp :rgba($color-border, 0.6);
+$color-bg:#fff;
+$rd:2px;
+$shadow:0 12px 17px 0 rgba(0, 0, 0, 0.05);

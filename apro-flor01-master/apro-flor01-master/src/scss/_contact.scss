@@ -1,0 +1,494 @@
+$height-form-xs: 40px;
+$height-form-xxl: 48px;
+.info-list {
+    margin-top: 30px;
+    @include lg {
+        margin-top: 50px;
+    }
+    @include xxl {
+        margin-top: 70px;
+    }
+    @include xxxl {
+        margin-top: 90px;
+    }
+    li {
+        display: block;
+        margin-bottom: 30px;
+        @include sm {
+            display: flex;
+            line-height: 1.125em;
+            margin-bottom: 5px;
+        }
+    }
+    .field {
+        display: block;
+        color: #575757;
+        min-width: 5em;
+        @include sm {
+            display: inline-block;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 100%;
+                height: 0;
+                line-height: 0;
+            }
+        }
+    }
+    .value {
+        color: #8b8b8b;
+        display: block;
+        @include sm {
+            padding-left: 0.5em;
+            display: inline-block;
+        }
+        @include xxl {
+            white-space: nowrap;
+        }
+    }
+}
+
+.contact-wrap {
+    @include lg {
+        display: flex;
+        padding-top: 0;
+        padding-bottom: 60px;
+    }
+    @include xxl {
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+    @include xxxl {
+        padding-top: 0;
+        padding-bottom: 120px;
+    }
+    .left-area {
+        @include xs_lg {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        @include lg {
+            width: 65%;
+        }
+    }
+    .right-area {
+        .link {
+            margin-bottom: 1em;
+        }
+        p {
+            font-weight: bold;
+        }
+        .fz-B {
+            margin-bottom: 80px;
+            &:after {
+                margin-top: 30px;
+            }
+        }
+        @include xs_lg {
+            border-top: 1px solid #e3e3e3;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            //background-color: #f5f5f5;
+        }
+        @include lg {
+            width: 35%;
+            border-left: 1px solid #e3e3e3;
+            margin-left: 45px;
+            padding-left: 45px;
+        }
+        @include xxl {
+            margin-left: 60px;
+            padding-left: 60px;
+        }
+        @include xxxl {
+            margin-left: 90px;
+            padding-left: 90px;
+        }
+    }
+    .desc {
+        margin: 30px 0;
+        color: #575757;
+        @include lg {
+            margin: 50px 0 35px;
+        }
+        @include xxl {
+            margin: 70px 0 40px;
+        }
+        @include xxxl {
+            margin: 90px 0 60px;
+        }
+    }
+}
+
+.map-rel {
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 70vh;
+    @include lg {
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        width: 31%;
+        height: 600px;
+    }
+    @include xl {
+        bottom: 80px;
+        //height: 64%;
+        height: 500px;
+    }
+    @include xxl {
+        width: 31%;
+        height: 500px;
+        //height: 64%;
+    }
+    @include xxxl {
+        bottom: 120px;
+        width: 30.2vw;
+        height: 600px;
+        //height: 64%;
+    }
+    @include fullhd {
+        width: 31.5vw;
+    }
+}
+
+.map-link {
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        @include icon(42);
+        vertical-align: middle;
+        margin-left: 3px;
+    }
+    &:hover {
+        color: $color-main;
+    }
+}
+
+.form {
+    li {
+        width: 100%;
+        margin-bottom: 20px;
+        @include sm {
+            display: flex;
+            margin-bottom: 40px;
+            &.w-100 {
+                margin-bottom: 0;
+            }
+        }
+        .field {
+            line-height: $height-form-xs;
+            color: #575757;
+            b {
+                color: $color-main;
+            }
+            @include sm {
+                //line-height: 50px;
+                min-width: 110px;
+            }
+            @include xxl {
+                line-height: $height-form-xxl;
+            }
+        }
+        .value {
+            width: 100%;
+            span {
+                margin-right: 20px;
+            }
+            .remark {
+                font-size: .875rem;
+                color: #939393;
+            }
+        }
+    }
+    input,
+    select {
+        border: none;
+        border: 1px solid #c3c3c3;
+        padding: 0 15px;
+        width: 100%;
+        background-color: transparent;
+        font-family: $font-family;
+        line-height: $height-form-xs;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color .3s ease;
+        &:focus {
+            border-color: $color-dark;
+            color: $color-dark;
+            font-weight: bold;
+        }
+        @include xxl {
+            line-height: $height-form-xxl;
+        }
+    }
+    select {
+        background-color: #f4f4f4;
+        border-color: #f4f4f4;
+    }
+    textarea {
+        border: none;
+        border: 1px solid #c3c3c3;
+        padding: 15px;
+        //height: 40px;
+        width: 100%;
+        background-color: transparent;
+        font-family: $font-family;
+        font-size: 16px;
+        line-height: 1.75em;
+        outline: none;
+        transition: border-color .3s ease;
+        &:focus {
+            border-color: $color-black;
+            color: $color-black;
+            font-weight: bold;
+        }
+    }
+    //form-group
+    .form-group {
+        display: flex;
+        .code {
+            img {
+                display: block;
+                height: $height-form-xs + 2;
+                width: auto;
+                @include xxl {
+                    height: $height-form-xxl + 2;
+                }
+            }
+        }
+    }
+    .btn-group {
+        display: flex;
+        width: 100%;
+        @include xs_md {
+            padding-top: 20px;
+        }
+        .btn {
+            display: block;
+            flex: 1;
+            line-height: $height-form-xs + 2;
+            background-color: #f4f4f4;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            color: #000;
+            @include xxl {
+                line-height: $height-form-xxl + 2;
+            }
+            &+.btn {
+                margin-left: 20px;
+            }
+            &.submit {
+                background-color: $color-yellow;
+            }
+        }
+    }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+    //一般狀態
+    &+label {
+        display: inline-block;
+        text-align: left;
+        cursor: pointer;
+        line-height: $height-form-xs;
+        transition: all 0.3s ease;
+        padding-right: 1em;
+        font-size: 16px;
+        position: relative;
+        @include xxl {
+            line-height: $height-form-xxl;
+        }
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background-color: #fff;
+            border: 1px solid #c8c8c8;
+            border-radius: $rd;
+            margin-top: -4px;
+            transition: border-color .3s;
+        }
+    }
+    //按下後
+    &:checked+label {
+        color: #000;
+        font-weight: normal;
+        //前面的圈圈
+        &:before {
+            @include icon(29);
+            border-color: $color-dark;
+            background-color: $color-dark;
+        }
+    }
+}
+
+input[type="radio"] {
+    &+label {
+        &:before {
+            border-radius: 50%;
+        }
+    }
+}
+
+// old ===========================
+.contact {
+    color: #000;
+    @include lg {
+        min-height: 50vh;
+        transition: padding .5s ease;
+        .fz-B {
+            display: none;
+        }
+        &.show-contact {
+            padding-bottom: 23vw;
+        }
+    }
+    @include xl {
+        padding-top: 11vw;
+        min-height: 480px;
+        &.show-contact {
+            padding-bottom: 18vw;
+        }
+    }
+    @include xxl {
+        //min-height: 480px;
+        &.show-contact {
+            padding-bottom: 16vw;
+        }
+    }
+    @include xxxl {
+        min-height: 520px;
+        &.show-contact {
+            padding-bottom: 14vw;
+        }
+    }
+    @media only screen and (min-width: 1700px) {
+        min-height: 30vw;
+    }
+}
+
+.btn-send {
+    display: block;
+    background-color: $color-main;
+    text-align: center;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 100%;
+    font-family: $font-family-en;
+    font-size: 1rem;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color .3s;
+    position: relative;
+    overflow: hidden;
+    span {
+        position: relative;
+        z-index: 5;
+    }
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: $color-dark;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform .3s ease;
+        transform-origin: left center;
+    }
+    &:active,
+    &:hover {
+        &:before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+// .show-contact {
+//     .page-banner {
+//         @include md {
+//             padding-bottom: 10vw;
+//         }
+//     }
+// }
+.select2-container--default {
+    .select2-selection--single {
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid #000;
+        font-size: 1rem;
+        height: 40px;
+        border-radius: 0;
+        outline: none;
+        .select2-selection__rendered {
+            font-size: 1rem;
+            line-height: 40px;
+            font-weight: bold;
+            padding-left: 0;
+        }
+        .select2-selection__arrow {
+            height: 38px;
+            b {
+                border-color: #000 transparent transparent transparent;
+            }
+        }
+    }
+    .select2-results__option--highlighted[aria-selected] {
+        background-color: $color-main;
+        transition: background-color .25s ease;
+    }
+}
+
+.select2-dropdown {
+    border: none;
+    box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.3);
+    .select2-results__group {
+        font-weight: bold;
+        font-size: 1.125em;
+        color: #ccc;
+        padding: 3px 15px;
+    }
+    .select2-results__option {
+        padding: 3px 15px;
+        font-weight: bold;
+    }
+    .select2-results__options--nested {
+        &:after {
+            content: "";
+            display: block;
+            width: calc(100% - 30px);
+            height: 1px;
+            border-bottom: 1px solid $color-border;
+            margin: 0 auto;
+        }
+    }
+}
+
+.subject {
+    .select2-container--default {
+        .select2-selection--single {
+            border-bottom: 1px solid $color-border;
+        }
+    }
+}
