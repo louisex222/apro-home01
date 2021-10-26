@@ -66,7 +66,7 @@ t8.fromTo('.home01-template-08 h3', {
     }, {
         y: 0,
         opacity: 1,
-        ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+        ease:"ease",
         rotation:0.01,
         duration:1,
     },0)
@@ -75,7 +75,7 @@ t8.fromTo('.home01-template-08 h3', {
         opacity: 0
     }, {
         y: 0,
-        ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+        ease:"ease",
         opacity: 1,
         rotation:0.01,
         duration:1,
@@ -85,21 +85,20 @@ t8.fromTo('.home01-template-08 h3', {
 
     },{
         y:0,
-        ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+        ease:"ease",
         rotation:0.01,
-        duration:0.6,
+        duration:0.3,
     },0)
     .from('.home01-template-08 .swiper-slide', {
         stagger: { 
-            each: 0.2,
+            each: 0.25,
             from: "left",
-            ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+            ease:"ease",
         },
         rotation:0.01,
-        duration:1,
         y: 100,
         opacity: 0,
-        duration:0.6
+        duration:0.3
     },0)
 
 ScrollTrigger.create({
