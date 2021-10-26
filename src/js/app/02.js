@@ -1,5 +1,5 @@
 let swiper02 = new Swiper('.home01-template-02 .swiper-container', {
-    speed: 1500,
+    speed: 1000,
     init: false,
     navigation: {
         prevEl: '.home01-template-02 .swiper-button-prev',
@@ -59,7 +59,6 @@ setTimeout(function() {
         y: 50,
         opacity: 0
     }, {
-        duration: 0.45,
         y: 0,
         opacity: 1
     })
@@ -67,7 +66,6 @@ setTimeout(function() {
         y: 50,
         opacity: 0
     }, {
-        duration: 0.45,
         y: 0,
         opacity: 1
     })
@@ -75,13 +73,12 @@ setTimeout(function() {
         y: 50,
         opacity: 0
     }, {
-        duration: 0.9,
         y: 0,
         opacity: 1
     })
 
 
-}, 2000)
+}, 1500)
 let loading = document.querySelector('.loading')
 if (
     document.readyState === 'complete'

@@ -141,11 +141,17 @@
             }
             .swiper-slide-duplicate{
                 transform:  translate(0px, 0px) !important;
-                opacity: 1 !important;
+                // opacity: 0;
+                
             }
         }
     }
-    
+    &.move{
+        .swiper-slide-duplicate{
+            opacity: 1 !important;
+           
+        }
+    }   
     .swiper-button-group{
         .swiper-button-prev{
             &::after{

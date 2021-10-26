@@ -54,27 +54,41 @@
 
 let t5 = gsap.timeline()
 t5.fromTo('.home01-template-05 h3 ', {
-        y: 100,
+        y: 150,
         opacity: 0
     }, {
-        durtation:0.45,
         y: 0,
-        opacity: 1
-    })
+        opacity: 1,
+        ease:"ease",
+        rotation:0.01,
+        duration:1,
+    },0)
+    .fromTo('.home01-template-05 .swiper-container',{
+        y:100
+
+    },{
+        y:0,
+        ease:"ease",
+        rotation:0.01,
+        duration:0.3,
+        
+    },0)
     .from('.home01-template-05 .swiper-slide', {
         stagger: { 
             each: 0.1,
             from: "left",
-            ease: "power2.inOut",
+            ease: "ease",
             },
         
         y:100,
-        opacity: 0
-    })
+        opacity: 0,
+        rotation:0.01,
+        duration:0.3,
+    },0)
 ScrollTrigger.create({
     animation: t5,
     trigger: '.home01-template-05',
     toggleActions: 'restart pause restart reset',
-    start:'top 80%',
+    // start:'top 80%',
     // markers: true,
 })

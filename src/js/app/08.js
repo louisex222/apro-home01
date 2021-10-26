@@ -7,9 +7,7 @@ $(function() {
         clickable: true,
         allowTouchMove: true,
         // autoplay:true,
-        autoplay:{
-            delay:3000,
-        },
+
         breakpoints: {
             0: {
                 slidesPerView: 1,
@@ -20,7 +18,7 @@ $(function() {
                 spaceBetween: 50,
             },
 
-            1100: {
+            1150: {
                 slidesPerView: 3,
                 spaceBetween: 70,
             },
@@ -63,36 +61,53 @@ $(function() {
 
 let t8 = gsap.timeline()
 t8.fromTo('.home01-template-08 h3', {
-    y: 100,
+    y: 150,
     opacity: 0
     }, {
-        durtation:0.45,
         y: 0,
-        opacity: 1
-    }).fromTo('.home01-template-08 .swiper-button-group', {
-        y: 100,
+        opacity: 1,
+        ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+        rotation:0.01,
+        duration:1,
+    },0)
+    .fromTo('.home01-template-08 .swiper-button-group', {
+        y: 150,
         opacity: 0
     }, {
-        durtation:0.45,
         y: 0,
-        opacity: 1
-    })
+        ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+        opacity: 1,
+        rotation:0.01,
+        duration:1,
+    },0)
+    .fromTo('.home01-template-08 .swiper-container',{
+        y:100
+
+    },{
+        y:0,
+        ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
+        rotation:0.01,
+        duration:0.6,
+    },0)
     .from('.home01-template-08 .swiper-slide', {
         stagger: { 
-            each: 0.1,
+            each: 0.2,
             from: "left",
-            ease: "ease",
+            ease:"M0,0,C0.174,0.108,0.203,0.444,0.336,0.65,0.481,0.876,0.822,1,1,1 ",
         },
-       
+        rotation:0.01,
+        duration:1,
         y: 100,
-        opacity: 0
-    })
+        opacity: 0,
+        duration:0.6
+    },0)
 
 ScrollTrigger.create({
     animation: t8,
     trigger: '.home01-template-08',
     toggleActions: 'restart pause restart reset',
+    toggleClass:'move'
     // markers: true,
-    start:'top 80%',
+    // start:'top 80%',
 
 })

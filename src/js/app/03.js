@@ -2,7 +2,7 @@ let rown1 = Math.round($('.home01-template-03 .right .box span').height() / pars
 let rown2 = Math.round($('.home01-template-03 .right .box p').height() / parseFloat($('.home01-template-03 .right .box p').css('line-height')))
 
 
-if (window.innerWidth > 1500) {
+if (window.innerWidth > 11500) {
     if (rown1 > 2) {
         $('.home01-template-03 .right .box').css('padding-top', '8.66vw')
     }
@@ -15,7 +15,7 @@ if (window.innerWidth > 1500) {
     }
 
 }
-if (window.innerWidth < 1500) {
+if (window.innerWidth < 11500) {
     if (rown1 > 2) {
         $('.home01-template-03 .right .box').css('padding-top', '11.66vw')
     }
@@ -34,50 +34,62 @@ if (window.innerWidth < 1500) {
     //     $('.home01-template-03 .right .box p').addClass('active')
     //     $('.home01-template-03 .right .box span').addClass('active')
     // }, 0)
-
-let t3 = gsap.timeline()
+    gsap.registerPlugin(CustomEase)
+    let t3 = gsap.timeline()
+    CustomEase.create("cosmo", ".25,0,.25,1");
 
 t3
 .fromTo('.home01-template-03 .left ', {
-    y: 100,
+    y: 150,
     opacity: 0,
 
 }, {
 
-    duration: .45,
     y: 0,
-    opacity: 1
+    opacity: 1,
+    ease:"cosmo",
+    duration:1.2,
+    rotation:0.01
 
 
-}).fromTo('.home01-template-03 .left img', {
-    y: 100,
+},0).fromTo('.home01-template-03 .left img', {
+    y: 150,
     opacity: 0,
 
 }, {
-
-    duration: .45,
     y: 0,
-    opacity: 1
+    opacity: 1,
+    ease:  "cosmo",
+    duration:1.2,
+    rotation:0.01
 
 
-}).fromTo('.home01-template-03 .right h3', {
-    y: 100,
+},0.3).fromTo('.home01-template-03 .right h3', {
+    y: 150,
     opacity: 0,
 
 }, {
-    duration: .45,
+   
     y: 0,
-    opacity: 1
-})
+    opacity: 1,
+    ease: "cosmo",
+    duration:1.1,
+    rotation:0.01
+
+},0.4)
 .fromTo('.home01-template-03 .right .box div', {
-    y: 100,
+    y: 150,
     opacity: 0,
 
 }, {
-    duration: .45,
+  
     y: 0,
-    opacity: 1
-})
+    opacity: 1,
+    ease: "cosmo",
+    duration:1,
+    rotation:0.01
+
+},0.5)
 
 
 ScrollTrigger.create({
@@ -86,4 +98,5 @@ ScrollTrigger.create({
     toggleActions: 'restart pause restart reset',
     start:'top 80%',
     // markers: true,
+    // snap: 0.1
 })

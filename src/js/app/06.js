@@ -25,11 +25,11 @@ $(function() {
             },
             1100: {
                 slidesPerView: 4,
-                spaceBetween: 50,
+                spaceBetween: 150,
             },
-            1500: {
+            11500: {
                 slidesPerView: 4,
-                spaceBetween: 50,
+                spaceBetween: 150,
             },
             1800: {
                 slidesPerView: 5,
@@ -54,31 +54,36 @@ $(function() {
 let t6 = gsap.timeline()
 
 t6.fromTo('.home01-template-06 h3 ', {
-    y: 100,
+    y: 150,
     opacity: 0
 }, {
-    durtation:0.3,
     y: 0,
-    opacity: 1
-}).from('.home01-template-06 .swiper-slide', {
+    opacity: 1,
+    ease:"ease",
+    rotation:0.01,
+    duration:1,
+},0).from('.home01-template-06 .swiper-slide', {
     stagger: { 
-        each: 0.1,
+        each: 0.2,
         from: "left",
         ease: "ease",
      // 
       },
-    durtation:0.4,
-    y: 100,
-    opacity: 0
+    y: 150,
+    opacity: 0,
+    rotation:0.01,
+    duration:1,
 
-}).fromTo('.home01-template-06 .swiper-pagination ', {
-    y: 100,
+},0).fromTo('.home01-template-06 .swiper-pagination ', {
+    y: 150,
     opacity: 0
 }, {
-    durtation:0.3,
     y: 0,
-    opacity: 1
-})
+    opacity: 1,
+    ease:"ease",
+    rotation:0.01,
+    duration:1.2,
+},0.3)
 
 ScrollTrigger.create({
     animation: t6,

@@ -16,36 +16,44 @@ if (window.innerWidth > 1500) {
 let t9 = gsap.timeline()
 
 t9.fromTo('.home01-template-09 .left h3', {
-    y: 100,
+    y: 50,
     opacity: 0
 }, {
-    duration: .45,
     y: 0,
-    opacity: 1
-}).fromTo('.home01-template-09 .left >div', {
-    y: 100,
+    opacity: 1,
+    ease:"ease",
+    rotation:0.01,
+    duration:1,
+},0).fromTo('.home01-template-09 .left >div', {
+    y: 50,
     opacity: 0
 }, {
-    duration: .45,
     y: 0,
-    opacity: 1
-})
+    opacity: 1,
+    ease:"ease",
+    rotation:0.01,
+    duration:1,
+},0.3)
 .fromTo('.home01-template-09 .left .direction', {
-    y: 100,
+    y: 50,
     opacity: 0
 }, {
-    duration: .45,
     y: 0,
-    opacity: 1
-})
+    ease:"ease",
+    opacity: 1,
+    rotation:0.01,
+    duration:0.9,
+},0.4)
 .fromTo('.home01-template-09 .right img', {
-    y: 100,
+    x: -50,
     opacity: 0
 }, {
-    duration: .45,
-    y: 0,
-    opacity: 1
-})
+    x: 0,
+    opacity: 1,
+    ease:"ease",
+    rotation:0.01,
+    duration:0.8,
+},0.5)
 
 ScrollTrigger.create({
     animation: t9,
