@@ -79,6 +79,7 @@ setTimeout(function() {
 
 
 }, 1500)
+gsap.to('.circle', { clipPath: "circle(0%)", duration: 1.5 })
 let loading = document.querySelector('.loading')
 if (
     document.readyState === 'complete'
