@@ -639,18 +639,47 @@
     z-index: 10001;
     overflow: hidden;
     animation: ons 3s 1.3s ease forwards;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 0px 100vw #ffc44d;
+        animation: on 3s 1.3s ease forwards;
+        @include xs_md{
+            box-shadow: 0px 0px 0px 150vw #ffc44d;
+            animation: on-740 3s 1.3s ease forwards;
+            
+        }
+        @include md_xl{
+            box-shadow: 0px 0px 0px 200vw #ffc44d;
+            animation: on-1100 3s 1.3s ease forwards;
+        }
+    }
   }
-  .circle::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0px;
-    height: 0px;
-    border-radius: 100%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 0px 100vw #ffc44d;
-    animation: on 3s 1.3s ease forwards;
+  @keyframes on-740 {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 450vw;
+      height: 450vw;
+    }
+  }
+  @keyframes on-1100 {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 300vw;
+      height: 300vw;
+    }
   }
   @keyframes on {
     0% {
@@ -667,6 +696,6 @@
         z-index: 1001;
     }
     100% {
-      z-index: -1;
+        z-index: -1;
     }
   }

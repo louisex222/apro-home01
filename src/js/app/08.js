@@ -91,7 +91,7 @@ t8.fromTo('.home01-template-08 h3', {
     },0)
     .from('.home01-template-08 .swiper-slide', {
         stagger: { 
-            each: 0.25,
+            each: 0.3,
             from: "left",
             ease:"ease",
         },
