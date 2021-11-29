@@ -5,9 +5,9 @@ $(function() {
         spaceBetween: 40,
         speed: 1000,
         allowTouchMove: true,
-        autoplay:{
-            delay:3000,
-        },
+        // autoplay:{
+        //     delay:3000,
+        // },
         navigation: {
             nextEl: '.home01-template-07  .swiper-button-next',
             prevEl: '.home01-template-07  .swiper-button-prev',

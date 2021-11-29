@@ -41,6 +41,14 @@
                     // 輪播title
                     transition: 0.6s ease;
                     position: relative;
+                    a{
+                        position: relative;
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                    }
                     h4 {
                         font-weight: normal;
                         line-height: 1;
@@ -67,12 +75,21 @@
                         -webkit-box-orient: vertical;
                         font-family: MicrosoftJhengHei;
                     }
+                    .img_box{
+                        width: fit-content;
+                        overflow: hidden;
+                    }
                     // 輪播圖片
                     img {
                         width: 100%;
                         height: 100%;
                         max-width: 23.18vw;
                         filter: grayscale(1);
+                        transition: 0.6s ease;
+                        &:hover{
+                            transform: scale(1.2);
+                            transition: 0.6s ease;
+                        }
                     }
                     &::after {
                         content: '';

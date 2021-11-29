@@ -1,9 +1,10 @@
 $(function() {
     var s8 = new Swiper(".home01-template-08 .swiper-container", {
         slidesPerGroup: 1,
+        slidesPerView: 4,
         speed: 1000,
         // centeredSlides:true,
-        loop: true,
+        loop: false,
         clickable: true,
         allowTouchMove: true,
         // autoplay:true,

@@ -34,9 +34,9 @@ if (window.innerWidth < 11500) {
     //     $('.home01-template-03 .right .box p').addClass('active')
     //     $('.home01-template-03 .right .box span').addClass('active')
     // }, 0)
-    gsap.registerPlugin(CustomEase)
+    
     let t3 = gsap.timeline()
-    CustomEase.create("cosmo", ".25,0,.25,1");
+   
 
 t3
 .fromTo('.home01-template-03 .left ', {
@@ -47,7 +47,7 @@ t3
 
     y: 0,
     opacity: 1,
-    ease:"cosmo",
+    ease:"ease",
     duration:1.2,
     rotation:0.01
 
@@ -59,7 +59,7 @@ t3
 }, {
     y: 0,
     opacity: 1,
-    ease:  "cosmo",
+    ease:  "ease",
     duration:1.2,
     rotation:0.01
 
@@ -72,7 +72,7 @@ t3
    
     y: 0,
     opacity: 1,
-    ease: "cosmo",
+    ease: "ease",
     duration:1.1,
     rotation:0.01
 
@@ -85,7 +85,7 @@ t3
   
     y: 0,
     opacity: 1,
-    ease: "cosmo",
+    ease: "ease",
     duration:1,
     rotation:0.01
 
