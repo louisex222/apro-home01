@@ -62,7 +62,7 @@ $(function() {
 
 let t8 = gsap.timeline()
 t8.fromTo('.home01-template-08 h3', {
-    y: 150,
+    y: 100,
     opacity: 0
     }, {
         y: 0,
@@ -72,7 +72,7 @@ t8.fromTo('.home01-template-08 h3', {
         duration:1,
     },0)
     .fromTo('.home01-template-08 .swiper-button-group', {
-        y: 150,
+        y: 100,
         opacity: 0
     }, {
         y: 0,
@@ -105,7 +105,7 @@ t8.fromTo('.home01-template-08 h3', {
 ScrollTrigger.create({
     animation: t8,
     trigger: '.home01-template-08',
-    toggleActions: 'restart pause restart reset',
+    toggleActions: 'play complete restart reset',
     toggleClass:'move'
     // markers: true,
     // start:'top 80%',

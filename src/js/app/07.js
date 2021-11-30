@@ -31,7 +31,7 @@ $(function() {
 let t7 = gsap.timeline()
 
 t7.fromTo('.home01-template-07 .left', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -41,7 +41,7 @@ t7.fromTo('.home01-template-07 .left', {
     duration:1.2,
 
 },0).fromTo('.home01-template-07 .left img', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -52,7 +52,7 @@ t7.fromTo('.home01-template-07 .left', {
 
 },0.3)
 .fromTo('.home01-template-07 .right h3', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -62,7 +62,7 @@ t7.fromTo('.home01-template-07 .left', {
     duration:1.1,
 
 },0.4).fromTo('.home01-template-07 .right .swiper-slide', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -73,7 +73,7 @@ t7.fromTo('.home01-template-07 .left', {
 
 },0.5)
 .fromTo('.home01-template-07 .right .swiper-button-group', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -84,10 +84,29 @@ t7.fromTo('.home01-template-07 .left', {
 
 },0.6)
 
+let t7_move = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.home01-template-07',
+        scrub: true,
+        toggleActions: 'play complete restart reset',
+        // markers: true,
+        end: "50%",
+        onUpdate: self => console.log("progress:", self.progress)
+      }
+})
+t7_move.set('.home01-template-07 .left img',{
+    scale: 0.7,
+    // y:'0'
+}).to('.home01-template-07 .left img',{
+    scale:1.1,
+    // y:'35%',
+    ease:'ease'
+})
+
 ScrollTrigger.create({
     animation: t7,
     trigger: '.home01-template-07',
-    toggleActions: 'restart pause restart reset',
+    toggleActions: 'play complete restart reset',
     // start:'top 80%',
 
     // markers: true,

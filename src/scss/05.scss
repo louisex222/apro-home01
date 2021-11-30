@@ -24,7 +24,7 @@
         position: absolute;
         h3 {
             max-width: 350px;
-            font-family: MicrosoftJhengHei;
+             
             font-weight: bold;
             letter-spacing: 1.8px;
             color: #9c7456;
@@ -41,6 +41,12 @@
                     // 輪播title
                     transition: 0.6s ease;
                     position: relative;
+                    &:hover{
+                        &::after {
+                            transition: 0.6s ease;
+                            transform: scaleX(1)
+                        }
+                    }
                     a{
                         position: relative;
                         display: inline-block;
@@ -59,7 +65,7 @@
                         -webkit-line-clamp: 2;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
-                        font-family: MicrosoftJhengHei;
+                         
                     }
                     // 輪播文字
                     p {
@@ -73,10 +79,10 @@
                         -webkit-line-clamp: 2;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
-                        font-family: MicrosoftJhengHei;
+                         
                     }
                     .img_box{
-                        width: fit-content;
+                        max-width: 23.18vw;
                         overflow: hidden;
                     }
                     // 輪播圖片
@@ -99,7 +105,7 @@
                         background-color: #ffbb44;
                         bottom: 0;
                         transform: scaleX(0);
-                        transition: 0.5s ease;
+                        transition: 0.6s ease;
                         left: 0;
                     }
                     &.swiper-slide-next {
@@ -108,7 +114,7 @@
                             filter: grayscale(0);
                         }
                         &::after {
-                            transition: 0.5s ease;
+                            transition: 0.6s ease;
                             transform: scaleX(1)
                         }
                     }
@@ -178,7 +184,6 @@
                 .swiper-wrapper {
                     .swiper-slide {
                         margin-top: 6.1875vw;
-                        transition: 1s ease;
                         h4 {
                             font-size: 16px;
                             margin-bottom: 2.9375vw;
@@ -188,6 +193,10 @@
                             font-size: 24px;
                             margin-bottom: 10.3515vw;
                             max-width: 100%;
+                        }
+                        .img_box{
+                            max-width: 100%;
+                            overflow: hidden;
                         }
                         img {
                             max-width: 100%;
@@ -203,7 +212,7 @@
                             filter: grayscale(0);
                         }
                         &::after {
-                            transition: 0.5s ease;
+                            transition: 0.6s ease;
                             transform: scaleX(1)
                         }
                     }
@@ -233,6 +242,11 @@
                 &::after {
                     font-size: 18px;
                 }
+                &:hover{
+                    &::after {
+                        color: #ffc44d;
+                    }
+                }
             }
         }
     }
@@ -255,6 +269,10 @@
                         p {
                             font-size: 26px;
                             margin-bottom: 2.7604vw;
+                        }
+                        .img_box{
+                            max-width: 31.18vw;
+                            overflow: hidden;
                         }
                         img {
                             max-width: 31.18vw;
@@ -304,6 +322,9 @@
                             font-size: 26px;
                             margin-bottom: 2.7604vw;
                         }
+                        .img_box{
+                            max-width: 31.18vw;
+                        }
                         img {
                             max-width: 31.18vw;
                         }
@@ -349,6 +370,10 @@
                         p {
                             font-size: 1.677vw;
                             margin-bottom: 2.7604vw;
+                        }
+                        .img_box{
+                            max-width: 23.18vw;
+                            overflow: hidden;
                         }
                         img {
                             max-width: 23.18vw;

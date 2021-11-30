@@ -13,7 +13,7 @@
     h3 {
         font-weight: bold;
         letter-spacing: 1.8px;
-        font-family: MicrosoftJhengHei;
+         
         color: #9c7456;
         width: 50%;
         overflow: hidden;
@@ -27,8 +27,29 @@
     .swiper-container {
         .swiper-wrapper {
             .swiper-slide {
-                transition: 0.3s ease;
+                transition: 0.6s ease;
                 opacity: 1;
+                
+                &:hover{
+                    .img_box {
+                        &:after {
+                            transform: scaleX(1);
+                            transition: 0.3 ease;
+                        }
+                    }
+                    .text{
+                        .date {
+                            .line {
+                                width: 42px;
+                                height: 5px;
+                                background-color: #ffbb44;
+                                transition: 0.6s ease;
+                            }
+                        }
+                        
+                    } 
+                }
+                
                 .img_box {
                     width: fit-content;
                     display: flex;
@@ -50,7 +71,7 @@
                         height: 11px;
                         background-color: #ffbb44;
                         transform: scaleX(0);
-                        transition: 0.5s ease;
+                        transition: 0.6s ease;
                     }
                 }
                 .text {
@@ -59,7 +80,7 @@
                         letter-spacing: 0.9px;
                         color: #494949;
                         display: block;
-                        font-family: MicrosoftJhengHei;
+                         
                         overflow: hidden;
                         text-overflow: ellipsis;
                         -webkit-line-clamp: 1;
@@ -74,7 +95,7 @@
                             width: 0px;
                             height: 5px;
                             background-color: #ffbb44;
-                            transition: 0.5s ease;
+                            transition: 0.6s ease;
                         }
                     }
                     p {
@@ -100,7 +121,7 @@
                         letter-spacing: 0.8px;
                         color: #a9a9a9;
                         display: block;
-                        font-family: MicrosoftJhengHei;
+                         
                         overflow: hidden;
                         text-overflow: ellipsis;
                         -webkit-line-clamp: 1;
@@ -112,7 +133,7 @@
                         line-height: 1.2;
                         letter-spacing: 1px;
                         color: #313131;
-                        font-family: MicrosoftJhengHei;
+                         
                         overflow: hidden;
                         text-overflow: ellipsis;
                         -webkit-line-clamp: 3;
@@ -132,7 +153,7 @@
                             width: 42px;
                             height: 5px;
                             background-color: #ffbb44;
-                            transition: 0.3s ease;
+                            transition: 0.6s ease;
                         }
                     }
                 }
@@ -295,7 +316,7 @@
         .swiper-pagination-bullets {
             width: 100%;
             display: block;
-            bottom: 3%;
+            bottom: 0;
             .swiper-pagination-bullet {
                 margin: 0 15px;
                 position: relative;
@@ -313,7 +334,7 @@
                     left: 50%;
                     top: 50%;
                     transform: translate(-50%,-50%);
-                    transition: 0.3s ease;
+                    transition: 0.6s ease;
                     outline: none;
                 }
             }
@@ -392,7 +413,6 @@
             font-size: calc(24/1100*100vw);
         }
         padding: 5.083vw 6.5417vw 5.083vw 6.5417vw;
-        height: 100vh;
         position: relative;
         .swiper-container {
             .swiper-wrapper {

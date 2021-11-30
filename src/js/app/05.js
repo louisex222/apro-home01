@@ -8,9 +8,9 @@
         speed:900,
         centeredSlides: true,
         allowTouchMove: true,
-        autoplay:{
-            delay:3000,
-        },
+        // autoplay:{
+        //     delay:3000,
+        // },
         navigation: {
             nextEl: '.home01-template-05 .swiper-button-next',
             prevEl: '.home01-template-05 .swiper-button-prev',
@@ -54,7 +54,7 @@
 
 let t5 = gsap.timeline()
 t5.fromTo('.home01-template-05 h3 ', {
-        y: 150,
+        y: 100,
         opacity: 0
     }, {
         y: 0,
@@ -88,7 +88,7 @@ t5.fromTo('.home01-template-05 h3 ', {
 ScrollTrigger.create({
     animation: t5,
     trigger: '.home01-template-05',
-    toggleActions: 'restart pause restart reset',
+    toggleActions: 'play complete restart reset',
     // start:'top 80%',
     // markers: true,
 })

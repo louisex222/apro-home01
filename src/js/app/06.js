@@ -3,10 +3,10 @@ $(function() {
         slidesPerView: 3,
         spaceBetween: 40,
         speed: 1000,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: true
-        },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: true
+        // },
         allowTouchMove: true,
 
         pagination: {
@@ -54,7 +54,7 @@ $(function() {
 let t6 = gsap.timeline()
 
 t6.fromTo('.home01-template-06 h3 ', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -69,13 +69,13 @@ t6.fromTo('.home01-template-06 h3 ', {
         ease: "ease",
      // 
       },
-    y: 150,
+    y: 100,
     opacity: 0,
     rotation:0.01,
     duration:1,
 
 },0).fromTo('.home01-template-06 .swiper-pagination ', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -88,7 +88,7 @@ t6.fromTo('.home01-template-06 h3 ', {
 ScrollTrigger.create({
     animation: t6,
     trigger: '.home01-template-06',
-    toggleActions: 'restart pause restart reset',
+    toggleActions: 'play complete restart reset',
     start:'top 80%',
     // markers: true,
 })

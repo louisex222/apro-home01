@@ -132,7 +132,6 @@
         .swiper-pagination-bullet {
             height: 30px;
             width: 69px;
-            margin: 0 12px !important;
             border-radius: 0;
             position: relative;
             background-color: transparent;
@@ -168,9 +167,9 @@
         }
         @include md {
             bottom: 3.7604vw;
-
             .swiper-pagination-bullet {
                 width: 30px;
+                margin: 0 30px !important;
             }
         }
         @include lg {
@@ -180,6 +179,7 @@
             bottom: 7.7604vw;
             .swiper-pagination-bullet {
                 width: 69px;
+                margin: 0 12px !important;
             }
         }
     }

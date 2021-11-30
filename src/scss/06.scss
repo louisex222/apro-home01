@@ -17,7 +17,7 @@
         left: 50%;
         top: 15%;
         transform: translate(-50%,50px);
-        font-family: MicrosoftJhengHei;
+         
         font-weight: bold;
         letter-spacing: 1.8px;
         color: #9c7456;
@@ -84,7 +84,6 @@
             padding:  0 64px;
         }
         @include lg {
-            border-bottom: 1px solid $color-gray;
             display: flex;
             align-items: center;
         }
@@ -118,6 +117,9 @@
                 padding-right: 200px;
             }
             .swiper-container {
+                @include  xs_md{
+                    bottom: -30px;
+                }
                 @include xs_lg {
                     padding-bottom: 20px;
                 }
@@ -176,7 +178,6 @@
         .swiper-pagination-bullet {
             height: 30px;
             width: 69px;
-            margin: 0 12px !important;
             border-radius: 0;
             position: relative;
             background-color: transparent;
@@ -213,6 +214,7 @@
             bottom: 6.90625vw;
             .swiper-pagination-bullet {
                 width: 30px;
+                margin: 0 30px !important;
             }
         }
         @include lg {
@@ -222,6 +224,7 @@
             bottom: 6.4583vw;
             .swiper-pagination-bullet {
                 width: 69px;
+                margin: 0 12px !important;
             }
         }
         @include super{

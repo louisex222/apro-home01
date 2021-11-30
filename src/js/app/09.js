@@ -58,6 +58,7 @@ t9.fromTo('.home01-template-09 .left h3', {
 ScrollTrigger.create({
     animation: t9,
     trigger: '.home01-template-09',
-    toggleActions: 'restart pause restart reset',
+    toggleActions: 'play complete restart reset',
     // markers: true,
 })
+

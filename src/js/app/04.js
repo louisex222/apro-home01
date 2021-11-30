@@ -4,10 +4,10 @@ $(function() {
         spaceBetween: 40,
         speed: 1000,
         loop:false,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: true
-        },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: true
+        // },
         allowTouchMove: true,
         pagination: {
             el: " .home01-template-04 .page-home01-honor",
@@ -60,12 +60,12 @@ t4.from('.home01-template-04  .swiper-slide', {
         from: "left",
         ease: 'ease',
     },
-    y: 150,
+    y: 100,
     opacity: 0,
     rotation:0.01,
 
 },0).fromTo('.home01-template-04 .swiper-pagination ', {
-    y: 150,
+    y: 100,
     opacity: 0
 }, {
     y: 0,
@@ -79,7 +79,7 @@ t4.from('.home01-template-04  .swiper-slide', {
 ScrollTrigger.create({
     animation: t4,
     trigger: '.home01-template-04',
-    toggleActions: 'restart pause restart reset',
+    toggleActions: 'play complete restart reset',
     // start:'top 80%',
     // markers: true,
 })

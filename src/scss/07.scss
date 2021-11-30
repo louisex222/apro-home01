@@ -25,7 +25,7 @@
         position: relative;
         h3{
             margin-bottom: 2.8125vw;
-            font-family: MicrosoftJhengHei;
+             
             font-weight: bold;
             line-height: 1.2;
             letter-spacing: 1.5px;
@@ -48,7 +48,7 @@
                 .text{
                     // 人名
                     h4{
-                        font-family: MicrosoftJhengHei;
+                         
                         font-size: 30px;
                         font-weight: bold;
                         line-height: 1.1;
@@ -62,7 +62,7 @@
                     }
                     // 小字
                     span{
-                        font-family: MicrosoftJhengHei;
+                         
                         font-size: 14px;
                         font-weight: bold;
                         letter-spacing: 0.14px;
@@ -84,7 +84,7 @@
                     }
                     // 內容
                     p{
-                        font-family: MicrosoftJhengHei;
+                         
                         font-size: 16px;
                         font-weight: normal;
                         letter-spacing: 0.16px;
@@ -141,6 +141,7 @@
                 .pic{
                     img{
                         max-width: 150px;
+                        transform: scale(1);
                     }
                 }
             }
