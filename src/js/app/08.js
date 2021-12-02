@@ -7,7 +7,9 @@ $(function() {
         loop: false,
         clickable: true,
         allowTouchMove: true,
-        // autoplay:true,
+        autoplay:{
+            delay:3000,
+        },
 
         breakpoints: {
             0: {

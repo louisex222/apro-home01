@@ -260,6 +260,13 @@
             }
         }
     }
+    @include lg-1112{
+        .left{
+            .direction{
+                bottom: 15px;
+            }
+        }
+    }
     @include xxl{
         height: 720px;
         .left{

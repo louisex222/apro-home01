@@ -4,10 +4,10 @@ $(function() {
         spaceBetween: 40,
         speed: 1000,
         loop:false,
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: true
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true
+        },
         allowTouchMove: true,
         pagination: {
             el: " .home01-template-04 .page-home01-honor",

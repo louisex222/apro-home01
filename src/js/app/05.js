@@ -8,9 +8,9 @@
         speed:900,
         centeredSlides: true,
         allowTouchMove: true,
-        // autoplay:{
-        //     delay:3000,
-        // },
+        autoplay:{
+            delay:3000,
+        },
         navigation: {
             nextEl: '.home01-template-05 .swiper-button-next',
             prevEl: '.home01-template-05 .swiper-button-prev',

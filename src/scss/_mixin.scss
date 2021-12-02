@@ -96,6 +96,12 @@
 }
 
 ;
+@mixin lg-1112 {
+    @media (min-width: $lg-1112) and (max-width:$lg-1112) {
+        @content
+    }
+}
+;
 @mixin xl-1200 {
     @media (min-width: $xl-1200) {
         @content

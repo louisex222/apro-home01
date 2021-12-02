@@ -404,144 +404,144 @@
             }
         }
     }
-    // 影片
-    .media-popup {
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(7px);
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        z-index: 900;
-        pointer-events: none;
-        visibility: hidden;
-        opacity: 0;
+    
+}
+// 影片
+.media-popup {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(7px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 900;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .35s ease;
+    transition-delay: 0s;
+    overflow-y: auto;
+    .close-popup {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 0;
+        line-height: 0;
         transition: all .35s ease;
-        transition-delay: 0s;
-        overflow-y: auto;
-        .close-popup {
-            width: 40px;
-            height: 40px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3;
+        opacity: 0.5;
+        img {
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        svg {
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        &:active {
+            transform: scale(1.125);
+            opacity: 1;
+        }
+        &:hover {
+            transform: scale(1.125);
+            opacity: 1;
+        }
+        @include md {
+            width: 60px;
+            height: 60px;
+            right: 5px;
+            top: 5px
+        }
+        @include lg {
+            img {
+                width: 40%;
+            }
+            svg {
+                width: 40%;
+            }
+        }
+        @include xxl {
+            width: 72px;
+            height: 72px
+        }
+    }
+    .container {
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .55s ease;
+        width: 100%;
+        height: 100%;
+        height: 100vh;
+        padding: 0 40px;
+        .popup-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            font-size: 0;
-            line-height: 0;
-            transition: all .35s ease;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 3;
-            opacity: 0.5;
-            img {
-                display: block;
-                width: 50%;
-                height: auto;
-            }
-            svg {
-                display: block;
-                width: 50%;
-                height: auto;
-            }
-            &:active {
-                transform: scale(1.125);
-                opacity: 1;
-            }
-            &:hover {
-                transform: scale(1.125);
-                opacity: 1;
-            }
-            @include md {
-                width: 60px;
-                height: 60px;
-                right: 5px;
-                top: 5px
-            }
-            @include lg {
-                img {
-                    width: 40%;
-                }
-                svg {
-                    width: 40%;
-                }
-            }
-            @include xxl {
-                width: 72px;
-                height: 72px
-            }
-        }
-        .container {
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transition: all .55s ease;
-            width: 100%;
             height: 100%;
-            height: 100vh;
-            padding: 0 40px;
-            .popup-content {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                position: relative;
-                z-index: 10;
-            }
-            @include lg {
-                height: 100%;
-            }
-            @include xxl {
-                .popup-content {
-                    margin: 0 auto;
-                }
-            }
-            @include xxxl {
-                .popup-content {
-                    overflow: hidden;
-                    margin: 0 auto;
-                }
-            }
-            .popup-mask-close {
-                position: absolute;
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0
-            }
-        }
-        @include md {
-            .container {
-                padding: 0 13.33vw;
-            }
+            position: relative;
+            z-index: 10;
         }
         @include lg {
-            overflow-y: auto;
+            height: 100%;
+        }
+        @include xxl {
+            .popup-content {
+                margin: 0 auto;
+            }
+        }
+        @include xxxl {
+            .popup-content {
+                overflow: hidden;
+                margin: 0 auto;
+            }
+        }
+        .popup-mask-close {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0
         }
     }
-    .video {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        &:after {
-            content: "";
-            display: block;
-            width: 100%;
-            padding-bottom: 56.25%;
+    @include md {
+        .container {
+            padding: 0 13.33vw;
         }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%
-        }
+    }
+    @include lg {
+        overflow-y: auto;
     }
 }
-
+.video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%
+    }
+}
 
 /* 播放 */
 

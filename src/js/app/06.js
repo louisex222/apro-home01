@@ -3,10 +3,10 @@ $(function() {
         slidesPerView: 3,
         spaceBetween: 40,
         speed: 1000,
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: true
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true
+        },
         allowTouchMove: true,
 
         pagination: {
